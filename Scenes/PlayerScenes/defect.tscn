@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://d0kbqvcp33oyg"]
+[gd_scene load_steps=6 format=3 uid="uid://d0kbqvcp33oyg"]
 
 [ext_resource type="PackedScene" uid="uid://b6x67vftmcwvo" path="res://Assets/Player Assets/TheDefect.glb" id="1_2a7u1"]
 [ext_resource type="Script" uid="uid://cilclwb0o6oib" path="res://Scripts/Templates/stateManager.gd" id="2_r3brp"]
 [ext_resource type="Script" uid="uid://bf0edm1ep0453" path="res://Scripts/Templates/state.gd" id="3_l33vj"]
+[ext_resource type="Script" uid="uid://cxnayrm4agxtd" path="res://Scripts/Templates/pivotedCamera.gd" id="4_3o3sg"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2a7u1"]
 radius = 6.9726563
@@ -40,3 +41,12 @@ metadata/_custom_type_script = "uid://bf0edm1ep0453"
 [node name="fall" type="Node" parent="stateManager"]
 script = ExtResource("3_l33vj")
 metadata/_custom_type_script = "uid://bf0edm1ep0453"
+
+[node name="pivotedCamera" type="Node3D" parent="." node_paths=PackedStringArray("camera")]
+transform = Transform3D(1, 0, 0, 0, 0.9396926, -0.34202012, 0, 0.34202012, 0.9396926, 0, 6.6152062, 0)
+script = ExtResource("4_3o3sg")
+camera = NodePath("Camera")
+metadata/_custom_type_script = "uid://cxnayrm4agxtd"
+
+[node name="Camera" type="Camera3D" parent="pivotedCamera"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, -70)
