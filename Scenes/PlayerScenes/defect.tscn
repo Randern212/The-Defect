@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://d0kbqvcp33oyg"]
+[gd_scene load_steps=7 format=3 uid="uid://d0kbqvcp33oyg"]
 
 [ext_resource type="PackedScene" uid="uid://b6x67vftmcwvo" path="res://Assets/Player Assets/TheDefect.glb" id="1_2a7u1"]
+[ext_resource type="Script" uid="uid://dny8o4yfhvbo6" path="res://Scripts/PlayerScripts/defect.gd" id="1_qv6fe"]
 [ext_resource type="Script" uid="uid://cilclwb0o6oib" path="res://Scripts/Templates/stateManager.gd" id="2_r3brp"]
 [ext_resource type="Script" uid="uid://bf0edm1ep0453" path="res://Scripts/Templates/state.gd" id="3_l33vj"]
 [ext_resource type="Script" uid="uid://cxnayrm4agxtd" path="res://Scripts/Templates/pivotedCamera.gd" id="4_3o3sg"]
@@ -10,6 +11,7 @@ radius = 6.9726563
 height = 31.628
 
 [node name="Defect" type="CharacterBody3D"]
+script = ExtResource("1_qv6fe")
 
 [node name="TheDefect" parent="." instance=ExtResource("1_2a7u1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.36450768, 0, 0)
@@ -39,6 +41,10 @@ script = ExtResource("3_l33vj")
 metadata/_custom_type_script = "uid://bf0edm1ep0453"
 
 [node name="fall" type="Node" parent="stateManager"]
+script = ExtResource("3_l33vj")
+metadata/_custom_type_script = "uid://bf0edm1ep0453"
+
+[node name="Dash" type="Node" parent="stateManager"]
 script = ExtResource("3_l33vj")
 metadata/_custom_type_script = "uid://bf0edm1ep0453"
 
