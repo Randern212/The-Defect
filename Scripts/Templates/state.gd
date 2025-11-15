@@ -2,7 +2,7 @@ class_name State
 extends Node
 
 var ID:int
-var player:Defect
+var player:CharacterBody3D
 
 func _ready() -> void:
 	pass # Replace with function body.
