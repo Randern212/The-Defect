@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0kbqvcp33oyg"]
+
+[ext_resource type="PackedScene" uid="uid://b6x67vftmcwvo" path="res://Assets/Player Assets/TheDefect.glb" id="1_2a7u1"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2a7u1"]
+radius = 6.9726563
+height = 79.069855
+
+[node name="Defect" type="CharacterBody3D"]
+
+[node name="TheDefect" parent="." instance=ExtResource("1_2a7u1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7481079, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -13.3372345, 0)
+shape = SubResource("CapsuleShape3D_2a7u1")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.998929, 0, 0.046269692, 0, 1, 0, -0.046269692, 0, -0.998929, -0.13551712, 14.389971, -78.76388)
