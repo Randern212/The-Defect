@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://d0kbqvcp33oyg"]
+[gd_scene load_steps=5 format=3 uid="uid://d0kbqvcp33oyg"]
 
 [ext_resource type="PackedScene" uid="uid://b6x67vftmcwvo" path="res://Assets/Player Assets/TheDefect.glb" id="1_2a7u1"]
+[ext_resource type="Script" uid="uid://cilclwb0o6oib" path="res://Scripts/Templates/stateManager.gd" id="2_r3brp"]
+[ext_resource type="Script" uid="uid://bf0edm1ep0453" path="res://Scripts/Templates/state.gd" id="3_l33vj"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2a7u1"]
 radius = 6.9726563
@@ -17,3 +19,27 @@ shape = SubResource("CapsuleShape3D_2a7u1")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-0.998929, 0, 0.046269692, 0, 1, 0, -0.046269692, 0, -0.998929, -0.13551712, 14.389971, -78.76388)
+
+[node name="stateManager" type="Node" parent="."]
+script = ExtResource("2_r3brp")
+metadata/_custom_type_script = "uid://cilclwb0o6oib"
+
+[node name="idle" type="Node" parent="stateManager"]
+script = ExtResource("3_l33vj")
+metadata/_custom_type_script = "uid://bf0edm1ep0453"
+
+[node name="run" type="Node" parent="stateManager"]
+script = ExtResource("3_l33vj")
+metadata/_custom_type_script = "uid://bf0edm1ep0453"
+
+[node name="attack" type="Node" parent="stateManager"]
+script = ExtResource("3_l33vj")
+metadata/_custom_type_script = "uid://bf0edm1ep0453"
+
+[node name="jump" type="Node" parent="stateManager"]
+script = ExtResource("3_l33vj")
+metadata/_custom_type_script = "uid://bf0edm1ep0453"
+
+[node name="fall" type="Node" parent="stateManager"]
+script = ExtResource("3_l33vj")
+metadata/_custom_type_script = "uid://bf0edm1ep0453"
