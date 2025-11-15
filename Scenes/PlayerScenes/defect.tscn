@@ -6,19 +6,16 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2a7u1"]
 radius = 6.9726563
-height = 79.069855
+height = 31.628
 
 [node name="Defect" type="CharacterBody3D"]
 
 [node name="TheDefect" parent="." instance=ExtResource("1_2a7u1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7481079, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.36450768, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -13.3372345, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.6809545, 0)
 shape = SubResource("CapsuleShape3D_2a7u1")
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-0.998929, 0, 0.046269692, 0, 1, 0, -0.046269692, 0, -0.998929, -0.13551712, 14.389971, -78.76388)
 
 [node name="stateManager" type="Node" parent="."]
 script = ExtResource("2_r3brp")
