@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://b6x67vftmcwvo" path="res://Assets/Player Assets/TheDefect.glb" id="1_2a7u1"]
 [ext_resource type="Script" uid="uid://dny8o4yfhvbo6" path="res://Scripts/PlayerScripts/defect.gd" id="1_qv6fe"]
-[ext_resource type="Script" uid="uid://cilclwb0o6oib" path="res://Scripts/Templates/stateManager.gd" id="2_r3brp"]
 [ext_resource type="Script" uid="uid://bf0edm1ep0453" path="res://Scripts/Templates/state.gd" id="3_l33vj"]
+[ext_resource type="Script" uid="uid://b5i6tiidfny1f" path="res://Scripts/PlayerScripts/defectStateManager.gd" id="3_qv6fe"]
 [ext_resource type="Script" uid="uid://cxnayrm4agxtd" path="res://Scripts/Templates/pivotedCamera.gd" id="4_3o3sg"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2a7u1"]
@@ -21,7 +21,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.6809545, 0)
 shape = SubResource("CapsuleShape3D_2a7u1")
 
 [node name="stateManager" type="Node" parent="."]
-script = ExtResource("2_r3brp")
+script = ExtResource("3_qv6fe")
 metadata/_custom_type_script = "uid://cilclwb0o6oib"
 
 [node name="idle" type="Node" parent="stateManager"]
@@ -58,4 +58,4 @@ metadata/_custom_type_script = "uid://cxnayrm4agxtd"
 spring_length = 80.0
 
 [node name="Camera" type="Camera3D" parent="pivotedCamera/SpringArm3D"]
-transform = Transform3D(-1, 0, -8.7422784e-08, -1.7763568e-15, 1.0000001, 0, 8.7422784e-08, 0, -1.0000001, 6.8997388e-06, 2.384186e-07, 78.92381)
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 6.8997388e-06, 2.384186e-07, 78.92381)
