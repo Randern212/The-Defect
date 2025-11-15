@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://cxnayrm4agxtd" path="res://Scripts/Templates/pivotedCamera.gd" id="4_3o3sg"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2a7u1"]
-radius = 6.9726563
+radius = 2.789
 height = 31.628
 
 [node name="Defect" type="CharacterBody3D"]
@@ -49,10 +49,13 @@ script = ExtResource("3_l33vj")
 metadata/_custom_type_script = "uid://bf0edm1ep0453"
 
 [node name="pivotedCamera" type="Node3D" parent="." node_paths=PackedStringArray("camera")]
-transform = Transform3D(1, 0, 0, 0, 0.9396926, -0.34202012, 0, 0.34202012, 0.9396926, 0, 6.6152062, 0)
+transform = Transform3D(-1, 0, -8.742278e-08, -3.1648362e-08, 0.93217224, 0.36201507, 8.1493084e-08, 0.36201507, -0.93217224, 0, 6.6152062, 0)
 script = ExtResource("4_3o3sg")
-camera = NodePath("Camera")
+camera = NodePath("SpringArm3D/Camera")
 metadata/_custom_type_script = "uid://cxnayrm4agxtd"
 
-[node name="Camera" type="Camera3D" parent="pivotedCamera"]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, -70)
+[node name="SpringArm3D" type="SpringArm3D" parent="pivotedCamera"]
+spring_length = 80.0
+
+[node name="Camera" type="Camera3D" parent="pivotedCamera/SpringArm3D"]
+transform = Transform3D(-1, 0, -8.7422784e-08, -1.7763568e-15, 1.0000001, 0, 8.7422784e-08, 0, -1.0000001, 6.8997388e-06, 2.384186e-07, 78.92381)

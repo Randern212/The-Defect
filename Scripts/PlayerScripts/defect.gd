@@ -1,6 +1,5 @@
 extends CharacterBody3D
 
-
 @onready var stateMachine = $stateManager
 @onready var camera: pivotedCamera = $pivotedCamera
 
