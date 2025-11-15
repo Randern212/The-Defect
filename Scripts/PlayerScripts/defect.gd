@@ -1,7 +1,11 @@
+class_name Defect
 extends CharacterBody3D
 
 @onready var stateMachine = $stateManager
 @onready var camera: pivotedCamera = $pivotedCamera
+
+@export var speed:float = 10
+@export var acceleration:float = 20
 
 func _ready()->void:
 	stateMachine.init(self)
