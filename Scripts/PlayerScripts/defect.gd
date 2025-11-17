@@ -13,6 +13,7 @@ var right:Vector3=Vector3.ZERO
 
 @export var jumpForce:float = 12
 @export var gravity:float=-30
+@onready var Body: Node3D = $TheDefect
 
 func _ready()->void:
 	stateMachine.init(self)

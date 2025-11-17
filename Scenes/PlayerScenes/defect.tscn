@@ -17,7 +17,7 @@ height = 31.628
 script = ExtResource("1_qv6fe")
 
 [node name="TheDefect" parent="." instance=ExtResource("1_2a7u1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.36450768, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 0.8910065, 0.45399052, 0, -0.45399052, 0.8910065, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.6809545, 0)
