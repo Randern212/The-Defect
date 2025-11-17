@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://d0kbqvcp33oyg"]
+[gd_scene load_steps=11 format=3 uid="uid://d0kbqvcp33oyg"]
 
 [ext_resource type="PackedScene" uid="uid://b6x67vftmcwvo" path="res://Assets/Player Assets/TheDefect.glb" id="1_2a7u1"]
 [ext_resource type="Script" uid="uid://dny8o4yfhvbo6" path="res://Scripts/PlayerScripts/defect.gd" id="1_qv6fe"]
 [ext_resource type="Script" uid="uid://bf0edm1ep0453" path="res://Scripts/Templates/state.gd" id="3_l33vj"]
 [ext_resource type="Script" uid="uid://b5i6tiidfny1f" path="res://Scripts/PlayerScripts/defectStateManager.gd" id="3_qv6fe"]
 [ext_resource type="Script" uid="uid://cxnayrm4agxtd" path="res://Scripts/Templates/pivotedCamera.gd" id="4_3o3sg"]
+[ext_resource type="Script" uid="uid://cvex3pa63rpuf" path="res://Scripts/PlayerScripts/defectIdle.gd" id="4_37rr7"]
 [ext_resource type="Script" uid="uid://4b184l2td6oc" path="res://Scripts/PlayerScripts/defectRun.gd" id="5_birxg"]
 [ext_resource type="Script" uid="uid://dopsttnmq5vhq" path="res://Scripts/PlayerScripts/defectJump.gd" id="6_slxfu"]
 [ext_resource type="Script" uid="uid://vf0648iscsa" path="res://Scripts/PlayerScripts/defectFall.gd" id="7_37rr7"]
@@ -28,7 +29,7 @@ script = ExtResource("3_qv6fe")
 metadata/_custom_type_script = "uid://cilclwb0o6oib"
 
 [node name="idle" type="Node" parent="stateManager"]
-script = ExtResource("3_l33vj")
+script = ExtResource("4_37rr7")
 metadata/_custom_type_script = "uid://bf0edm1ep0453"
 
 [node name="run" type="Node" parent="stateManager"]

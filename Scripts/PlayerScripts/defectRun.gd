@@ -1,11 +1,15 @@
 extends State
 
-
 func _ready() -> void:
 	self.ID=Constants.playerStates.RUN
 
+func enter():
+	print("RUN")
+
 func input(event: InputEvent) -> int:
-	return ID
+	if Input.is_action_pressed("moveDown") or Input.is_action_pressed("moveLeft") or Input.is_action_pressed("moveRight") or Input.is_action_pressed("moveUp"):
+		return ID
+	return Constants.playerStates.IDLE
 
 func physics_process(delta: float) -> int:
 	if not player.is_on_floor():

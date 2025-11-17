@@ -11,14 +11,14 @@ var direction:Vector3=Vector3.ZERO
 var forward:Vector3=Vector3.ZERO
 var right:Vector3=Vector3.ZERO
 
-@export var jumpForce:float = 12
-@export var gravity:float=-30
+@export var jumpForce:float = 1200
+@export var gravity:float=-300
 @onready var Body: Node3D = $TheDefect
 
 func _ready()->void:
 	stateMachine.init(self,Constants.playerStates.IDLE)
 
-func _input(event: InputEvent) -> void:
+func _unhandled_input(event: InputEvent) -> void:
 	camera.cameraMouseInput(event)
 	stateMachine.input(event)
 

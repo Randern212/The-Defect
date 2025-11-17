@@ -5,6 +5,7 @@ func _ready() -> void:
 
 func enter():
 	player.velocity.y+=player.jumpForce
+	print("JUMP")
 
 func physics_process(delta: float)->int:
 	player.getDirection()
