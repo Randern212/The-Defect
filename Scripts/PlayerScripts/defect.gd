@@ -16,7 +16,7 @@ var right:Vector3=Vector3.ZERO
 @onready var Body: Node3D = $TheDefect
 
 func _ready()->void:
-	stateMachine.init(self)
+	stateMachine.init(self,Constants.playerStates.IDLE)
 
 func _input(event: InputEvent) -> void:
 	camera.cameraMouseInput(event)
