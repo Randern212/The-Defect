@@ -3,7 +3,7 @@ extends CharacterBody3D
 
 @onready var stateMachine:stateManager = $stateManager
 @onready var camera: pivotedCamera = $pivotedCamera
-@onready var body: Node3D = $TheDefect
+@onready var body: defectModel = $TheDefect
 @onready var collider: CollisionShape3D = $CollisionShape3D
 
 var direction:Vector3=Vector3.ZERO
@@ -25,6 +25,7 @@ func _unhandled_input(event: InputEvent) -> void:
 func _physics_process(delta: float) -> void:
 	camera.handleCameraMotionProcessing(delta)
 	stateMachine.physics_process(delta)
+	body.global_rotation.y = Vector3.BACK.signed_angle_to(direction,Vector3.UP)
 	move_and_slide()
 
 func getDirection()->void:

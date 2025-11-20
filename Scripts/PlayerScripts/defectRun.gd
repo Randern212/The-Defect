@@ -5,8 +5,8 @@ var jumping=false
 func _ready() -> void:
 	self.ID=Constants.playerStates.RUN
 
-#func enter():
-	#print("RUN")
+func enter():
+	player.body.animations.play("Running_001")
 
 func input(event: InputEvent) -> int:
 	if Input.is_action_pressed("jump"):
