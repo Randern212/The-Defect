@@ -1,22 +1,22 @@
 class_name Defect
 extends CharacterBody3D
 
-@onready var stateMachine = $stateManager
+@onready var stateMachine:stateManager = $stateManager
 @onready var camera: pivotedCamera = $pivotedCamera
-
-@export var speed:float = 10
-@export var acceleration:float = 20
+@onready var body: Node3D = $TheDefect
+@onready var collider: CollisionShape3D = $CollisionShape3D
 
 var direction:Vector3=Vector3.ZERO
-var forward:Vector3=Vector3.ZERO
-var right:Vector3=Vector3.ZERO
+#var forward:Vector3=Vector3.ZERO
+#var right:Vector3=Vector3.ZERO
 
-@export var jumpForce:float = 1200
+@export var speed:float = 300
+@export var acceleration:float = 150
+@export var jumpForce:float = 120
 @export var gravity:float=-300
-@onready var Body: Node3D = $TheDefect
 
 func _ready()->void:
-	stateMachine.init(self,Constants.playerStates.IDLE)
+	stateMachine.init(self,Constants.playerStates.FALL)
 
 func _unhandled_input(event: InputEvent) -> void:
 	camera.cameraMouseInput(event)
@@ -29,8 +29,8 @@ func _physics_process(delta: float) -> void:
 
 func getDirection()->void:
 	var rawInput:Vector2=Input.get_vector("moveLeft","moveRight","moveUp","moveDown")
-	forward=camera.camera.global_basis.z
-	right=camera.camera.global_basis.x
+	var forward=camera.camera.global_basis.z
+	var right=camera.camera.global_basis.x
 	direction=rawInput.y*forward+rawInput.x*right
 	direction.y=0
 	direction.normalized()
