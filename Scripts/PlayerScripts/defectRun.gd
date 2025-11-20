@@ -1,12 +1,17 @@
 extends State
 
+var jumping=false
+
 func _ready() -> void:
 	self.ID=Constants.playerStates.RUN
 
-func enter():
-	print("RUN")
+#func enter():
+	#print("RUN")
 
 func input(event: InputEvent) -> int:
+	if Input.is_action_pressed("jump"):
+		jumping=true
+		return Constants.playerStates.JUMP
 	if Input.is_action_pressed("moveDown") or Input.is_action_pressed("moveLeft") or Input.is_action_pressed("moveRight") or Input.is_action_pressed("moveUp"):
 		return ID
 	return Constants.playerStates.IDLE
@@ -21,5 +26,6 @@ func physics_process(delta: float) -> int:
 	return ID
 
 func exit():
-	player.direction=Vector3.ZERO
-	player.velocity=Vector3.ZERO
+	if not jumping:
+		player.direction=Vector3.ZERO
+		player.velocity=Vector3.ZERO

@@ -3,12 +3,11 @@ extends State
 func _ready() -> void:
 	self.ID = Constants.playerStates.IDLE
 
-func enter():
-	print("IDLE")
+#func enter():
+	#print("IDLE")
 
 func input(event: InputEvent) -> int:
 	if Input.is_action_pressed("jump"):
-		print("I am jumping it")
 		return Constants.playerStates.JUMP
 	if abs(Input.get_vector("moveLeft","moveRight","moveUp","moveDown")) > Vector2.ZERO:
 		return Constants.playerStates.RUN
