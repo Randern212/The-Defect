@@ -3,8 +3,8 @@ extends State
 func _ready() -> void:
 	self.ID = Constants.playerStates.IDLE
 
-#func enter():
-	#print("IDLE")
+func enter():
+	player.body.animations.play("Idle")
 
 func input(event: InputEvent) -> int:
 	if Input.is_action_pressed("jump"):

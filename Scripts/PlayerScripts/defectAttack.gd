@@ -5,7 +5,5 @@ extends State
 func _ready() -> void:
 	self.ID=Constants.playerStates.ATTACK
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func enter():
+	player.body.animations.play("Slash")

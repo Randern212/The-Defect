@@ -12,7 +12,7 @@ var right:Vector3=Vector3.ZERO
 
 @export var speed:float = 300
 @export var acceleration:float = 150
-@export var jumpForce:float = 120
+@export var jumpForce:float = 180
 @export var gravity:float=-300
 
 func _ready()->void:

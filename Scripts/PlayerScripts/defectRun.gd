@@ -7,6 +7,7 @@ func _ready() -> void:
 
 func enter():
 	player.body.animations.play("Running_001")
+	jumping=false
 
 func input(event: InputEvent) -> int:
 	if Input.is_action_pressed("jump"):
@@ -27,5 +28,4 @@ func physics_process(delta: float) -> int:
 
 func exit():
 	if not jumping:
-		player.direction=Vector3.ZERO
 		player.velocity=Vector3.ZERO
