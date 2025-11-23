@@ -7,5 +7,7 @@ enum playerStates
 	ATTACK,
 	JUMP,
 	FALL,
-	DASH
+	DASH,
+	DEFLECT,
+	STAGGER
 }

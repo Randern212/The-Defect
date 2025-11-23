@@ -10,6 +10,8 @@ func enter():
 	jumping=false
 
 func input(event: InputEvent) -> int:
+	if Input.is_action_pressed("dash"):
+		return Constants.playerStates.DASH
 	if Input.is_action_pressed("jump"):
 		jumping=true
 		return Constants.playerStates.JUMP

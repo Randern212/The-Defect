@@ -7,6 +7,8 @@ func enter():
 	player.body.animations.play("Idle")
 
 func input(event: InputEvent) -> int:
+	if Input.is_action_pressed("dash"):
+		return Constants.playerStates.DASH
 	if Input.is_action_pressed("jump"):
 		return Constants.playerStates.JUMP
 	if abs(Input.get_vector("moveLeft","moveRight","moveUp","moveDown")) > Vector2.ZERO:

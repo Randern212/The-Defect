@@ -3,6 +3,12 @@ extends State
 func _ready() -> void:
 	self.ID=Constants.playerStates.JUMP
 
+
+func input(event: InputEvent) -> int:
+	if Input.is_action_pressed("dash"):
+		return Constants.playerStates.DASH
+	return ID
+
 func enter():
 	player.velocity.y+=player.jumpForce
 	player.body.animations.play("Jump")
