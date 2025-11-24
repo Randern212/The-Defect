@@ -7,6 +7,8 @@ func enter():
 	player.body.animations.play("Idle")
 
 func input(event: InputEvent) -> int:
+	if Input.is_action_pressed("attack"):
+		return Constants.playerStates.ATTACK
 	if Input.is_action_pressed("dash"):
 		return Constants.playerStates.DASH
 	if Input.is_action_pressed("jump"):
