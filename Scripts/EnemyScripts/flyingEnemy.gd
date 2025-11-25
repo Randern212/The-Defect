@@ -13,6 +13,7 @@ var direction:Vector3=Vector3.ZERO
 var canShoot:bool=true
 
 @export var bullet:PackedScene
+@export var range:float=300
 
 func _process(delta: float) -> void:
 	if target:
@@ -23,6 +24,8 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func inRange()->bool:
+	if abs(global_position.distance_to(target.global_position))<=range:
+		return true
 	return false
 
 func cooldownOff()->void:
