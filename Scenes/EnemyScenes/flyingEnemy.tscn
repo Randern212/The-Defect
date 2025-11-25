@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://fdwmtjxslh6e"]
+[gd_scene load_steps=8 format=3 uid="uid://fdwmtjxslh6e"]
 
 [ext_resource type="PackedScene" uid="uid://b7tk275c6i62x" path="res://Assets/EnemyAssets/BatteryEye.glb" id="1_66a0h"]
 [ext_resource type="Script" uid="uid://beffybvngk8so" path="res://Scripts/EnemyScripts/flyingEnemy.gd" id="1_rrnqq"]
 [ext_resource type="Script" uid="uid://cilclwb0o6oib" path="res://Scripts/Templates/stateManager.gd" id="2_ggqna"]
-[ext_resource type="Script" uid="uid://bf0edm1ep0453" path="res://Scripts/Templates/state.gd" id="3_ggqna"]
+[ext_resource type="Script" uid="uid://b0snekfon7da3" path="res://Scripts/EnemyScripts/flyingEnemyIdle.gd" id="4_1rljf"]
+[ext_resource type="Script" uid="uid://chg466oe5stke" path="res://Scripts/EnemyScripts/flyingEnemyChase.gd" id="5_y42ls"]
+[ext_resource type="Script" uid="uid://8w7if6xrcgoo" path="res://Scripts/EnemyScripts/flyingEnemyAttack.gd" id="6_1rljf"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_rrnqq"]
 radius = 0.44455397
@@ -18,16 +20,21 @@ script = ExtResource("2_ggqna")
 metadata/_custom_type_script = "uid://cilclwb0o6oib"
 
 [node name="Idle" type="Node" parent="stateManager"]
-script = ExtResource("3_ggqna")
+script = ExtResource("4_1rljf")
 metadata/_custom_type_script = "uid://bf0edm1ep0453"
 
 [node name="Chase" type="Node" parent="stateManager"]
-script = ExtResource("3_ggqna")
+script = ExtResource("5_y42ls")
 metadata/_custom_type_script = "uid://bf0edm1ep0453"
 
 [node name="Attack" type="Node" parent="stateManager"]
-script = ExtResource("3_ggqna")
+script = ExtResource("6_1rljf")
 metadata/_custom_type_script = "uid://bf0edm1ep0453"
 
 [node name="hitbox" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_rrnqq")
+
+[node name="NavigationAgent" type="NavigationAgent3D" parent="."]
+debug_enabled = true
+
+[node name="animations" type="AnimationPlayer" parent="."]
