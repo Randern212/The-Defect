@@ -1,11 +1,18 @@
 extends State
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	ID=Constants.enemyStates.CHASE
 
+func enter():
+	player.animations.play("Moving")
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func physics_process(delta: float)->int:
+	if player.inRange():
+		return Constants.enemyStates.ATTACK
+	if player.target:
+		var destination = player.navigationAgent.get_next_path_position()
+		var localDestination = destination-player.global_position
+		player.direction = localDestination.normalized()
+		return ID
+	return Constants.enemyStates.IDLE
