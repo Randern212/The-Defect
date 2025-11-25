@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://cdeb0wifvw1st"]
+
+[ext_resource type="Script" uid="uid://dnkxs35s4o6xd" path="res://Scripts/EnemyScripts/projectile3D.gd" id="1_bh52o"]
+
+[sub_resource type="FogMaterial" id="FogMaterial_bh52o"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bh52o"]
+next_pass = SubResource("FogMaterial_bh52o")
+emission_enabled = true
+emission = Color(0, 1, 0, 1)
+emission_energy_multiplier = 0.5
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_a0o1a"]
+material = SubResource("StandardMaterial3D_bh52o")
+radius = 0.025
+height = 0.4
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_v7kvr"]
+radius = 0.025
+height = 0.4
+
+[node name="Beam" type="Area3D"]
+script = ExtResource("1_bh52o")
+metadata/_custom_type_script = "uid://dnkxs35s4o6xd"
+
+[node name="shape" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_a0o1a")
+
+[node name="hitbox" type="CollisionShape3D" parent="."]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_v7kvr")

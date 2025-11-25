@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://fdwmtjxslh6e"]
+[gd_scene load_steps=14 format=3 uid="uid://fdwmtjxslh6e"]
 
 [ext_resource type="PackedScene" uid="uid://b7tk275c6i62x" path="res://Assets/EnemyAssets/BatteryEye.glb" id="1_66a0h"]
 [ext_resource type="Script" uid="uid://beffybvngk8so" path="res://Scripts/EnemyScripts/flyingEnemy.gd" id="1_rrnqq"]
+[ext_resource type="PackedScene" uid="uid://cdeb0wifvw1st" path="res://Scenes/EnemyScenes/beam.tscn" id="2_fmmom"]
 [ext_resource type="Script" uid="uid://d22i6e7tsumy2" path="res://Scripts/EnemyScripts/flyingEnemytateManager.gd" id="3_1rljf"]
 [ext_resource type="Script" uid="uid://b0snekfon7da3" path="res://Scripts/EnemyScripts/flyingEnemyIdle.gd" id="4_1rljf"]
 [ext_resource type="Script" uid="uid://chg466oe5stke" path="res://Scripts/EnemyScripts/flyingEnemyChase.gd" id="5_y42ls"]
@@ -131,6 +132,7 @@ _data = {
 
 [node name="FlyingEnemy" type="CharacterBody3D"]
 script = ExtResource("1_rrnqq")
+bullet = ExtResource("2_fmmom")
 
 [node name="BatteryEye" parent="." instance=ExtResource("1_66a0h")]
 

@@ -12,6 +12,8 @@ var target:Defect=null
 var direction:Vector3=Vector3.ZERO
 var canShoot:bool=true
 
+@export var bullet:PackedScene
+
 func _process(delta: float) -> void:
 	if target:
 		navigationAgent.target_position=target.global_position
@@ -27,5 +29,6 @@ func cooldownOff()->void:
 	canShoot=true
 
 func shoot()->void:
-	#shooting
+	var bulletInstance:Projectile=bullet.instantiate()
+	bulletInstance.unpool(global_position,global_position.direction_to(target.global_position))
 	attackCooldown.start(1.0)
