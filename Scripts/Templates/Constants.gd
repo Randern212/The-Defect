@@ -11,3 +11,10 @@ enum playerStates
 	DEFLECT,
 	STAGGER
 }
+
+enum enemyStates
+{
+	IDLE,
+	CHASE,
+	ATTACK
+}
