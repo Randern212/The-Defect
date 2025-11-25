@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://bfvs44s8glia6"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_r36bn"]
+vertices = PackedVector3Array(-49.5, 0.5, -49.5, -49.5, 0.5, 49.5, 49.5, 0.5, 49.5, 49.5, 0.5, -49.5)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+geometry_parsed_geometry_type = 0
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_r36bn"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_6k4ne"]
+sky_material = SubResource("ProceduralSkyMaterial_r36bn")
+
+[sub_resource type="Environment" id="Environment_s8jgq"]
+background_mode = 2
+sky = SubResource("Sky_6k4ne")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="NavigationDemo" type="NavigationRegion3D"]
+navigation_mesh = SubResource("NavigationMesh_r36bn")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_s8jgq")
+
+[node name="map" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+use_collision = true
+size = Vector3(100, 1, 100)
