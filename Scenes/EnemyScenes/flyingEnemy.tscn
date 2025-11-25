@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://b7tk275c6i62x" path="res://Assets/EnemyAssets/BatteryEye.glb" id="1_66a0h"]
 [ext_resource type="Script" uid="uid://beffybvngk8so" path="res://Scripts/EnemyScripts/flyingEnemy.gd" id="1_rrnqq"]
-[ext_resource type="Script" uid="uid://cilclwb0o6oib" path="res://Scripts/Templates/stateManager.gd" id="2_ggqna"]
+[ext_resource type="Script" uid="uid://d22i6e7tsumy2" path="res://Scripts/EnemyScripts/flyingEnemytateManager.gd" id="3_1rljf"]
 [ext_resource type="Script" uid="uid://b0snekfon7da3" path="res://Scripts/EnemyScripts/flyingEnemyIdle.gd" id="4_1rljf"]
 [ext_resource type="Script" uid="uid://chg466oe5stke" path="res://Scripts/EnemyScripts/flyingEnemyChase.gd" id="5_y42ls"]
 [ext_resource type="Script" uid="uid://8w7if6xrcgoo" path="res://Scripts/EnemyScripts/flyingEnemyAttack.gd" id="6_1rljf"]
@@ -135,7 +135,7 @@ script = ExtResource("1_rrnqq")
 [node name="BatteryEye" parent="." instance=ExtResource("1_66a0h")]
 
 [node name="stateManager" type="Node" parent="."]
-script = ExtResource("2_ggqna")
+script = ExtResource("3_1rljf")
 metadata/_custom_type_script = "uid://cilclwb0o6oib"
 
 [node name="Idle" type="Node" parent="stateManager"]
@@ -160,3 +160,8 @@ debug_enabled = true
 libraries = {
 &"": SubResource("AnimationLibrary_fmmom")
 }
+
+[node name="attackCooldown" type="Timer" parent="."]
+
+[connection signal="animation_finished" from="animations" to="stateManager" method="forceChangeState"]
+[connection signal="timeout" from="attackCooldown" to="." method="cooldownOff"]

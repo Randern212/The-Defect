@@ -4,7 +4,7 @@ func init(player:CharacterBody3D,initialState:int)->void:
 	super(player,initialState)
 	player.body.animationFinished.connect(forceChangeState)
 
-func forceChangeState(stateName:String):
+func forceChangeState(stateName:StringName):
 	if stateName=="Slash":
 		forceIdle()
 
