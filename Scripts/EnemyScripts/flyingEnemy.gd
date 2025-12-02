@@ -25,7 +25,7 @@ func _process(delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	stateMachine.physics_process(delta)
-	body.global_rotation.y = Vector3.BACK.signed_angle_to(direction,Vector3.UP)
+	self.rotation.y = Vector3.RIGHT.signed_angle_to(direction,Vector3.UP)
 	move_and_slide()
 
 func inRange()->bool:
