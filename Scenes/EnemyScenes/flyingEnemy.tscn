@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://8w7if6xrcgoo" path="res://Scripts/EnemyScripts/flyingEnemyAttack.gd" id="6_1rljf"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_rrnqq"]
-radius = 0.44455397
+radius = 4.45
 
 [sub_resource type="Animation" id="Animation_1rljf"]
 resource_name = "IdleHovering"
@@ -56,7 +56,7 @@ tracks/0/keys = {
 }
 tracks/1/type = "value"
 tracks/1/imported = false
-tracks/1/enabled = true
+tracks/1/enabled = false
 tracks/1/path = NodePath(".:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
@@ -71,7 +71,7 @@ tracks/1/keys = {
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
-tracks/0/enabled = true
+tracks/0/enabled = false
 tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
@@ -111,7 +111,7 @@ tracks/0/keys = {
 }
 tracks/1/type = "value"
 tracks/1/imported = false
-tracks/1/enabled = true
+tracks/1/enabled = false
 tracks/1/path = NodePath(".:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
@@ -136,6 +136,7 @@ script = ExtResource("1_rrnqq")
 bullet = ExtResource("2_fmmom")
 
 [node name="BatteryEye" parent="." instance=ExtResource("1_66a0h")]
+transform = Transform3D(-4.371139e-07, 0, -10, 0, 10, 0, 10, 0, -4.371139e-07, 0, 15, 0)
 
 [node name="stateManager" type="Node" parent="."]
 script = ExtResource("3_1rljf")
@@ -154,6 +155,7 @@ script = ExtResource("6_1rljf")
 metadata/_custom_type_script = "uid://bf0edm1ep0453"
 
 [node name="hitbox" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, 0)
 shape = SubResource("SphereShape3D_rrnqq")
 
 [node name="NavigationAgent" type="NavigationAgent3D" parent="."]

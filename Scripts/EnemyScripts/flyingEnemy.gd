@@ -13,7 +13,8 @@ var direction:Vector3=Vector3.ZERO
 var canShoot:bool=true
 
 @export var bullet:PackedScene
-@export var range:float=300
+@export var range:float=100
+@export var speed:float=100
 
 func _ready() -> void:
 	stateMachine.init(self,Constants.enemyStates.IDLE)
@@ -24,6 +25,7 @@ func _process(delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	stateMachine.physics_process(delta)
+	body.global_rotation.y = Vector3.BACK.signed_angle_to(direction,Vector3.UP)
 	move_and_slide()
 
 func inRange()->bool:

@@ -6,9 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://t8wjet555817" path="res://Scenes/LevelScenes/player_detector.tscn" id="4_hiaha"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_r36bn"]
-vertices = PackedVector3Array(-499.5, 0.5, -499.5, -499.5, 0.5, 499.5, 499.5, 0.5, 499.5, 499.5, 0.5, -499.5)
+vertices = PackedVector3Array(-499.5, 19, -499.5, -499.5, 19, 499.5, 499.5, 19, 499.5, 499.5, 19, -499.5)
 polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
 geometry_parsed_geometry_type = 0
+cell_height = 10.0
+agent_height = 10.0
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_r36bn"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -27,6 +29,9 @@ glow_enabled = true
 navigation_mesh = SubResource("NavigationMesh_r36bn")
 script = ExtResource("1_71eqa")
 
+[node name="Defect" parent="." instance=ExtResource("1_s8jgq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20.983242, 0)
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_s8jgq")
 
@@ -35,11 +40,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 use_collision = true
 size = Vector3(1000, 1, 1000)
 
-[node name="Defect" parent="." instance=ExtResource("1_s8jgq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 23.611519, 0)
-
 [node name="FlyingEnemy" parent="." instance=ExtResource("2_71eqa")]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.846375, 7.425022, 0)
 
 [node name="playerDetector" parent="." instance=ExtResource("4_hiaha")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 209.48698, 7.9601574, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -97.297295, 14.363527, 0)

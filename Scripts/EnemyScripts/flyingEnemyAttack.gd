@@ -6,6 +6,7 @@ func _ready() -> void:
 
 func enter():
 	player.animations.play("attack")
+	player.velocity=Vector3.ZERO
 
 func exit():
 	player.shoot()
