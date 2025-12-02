@@ -17,6 +17,7 @@ func _ready() -> void:
 
 func _physics_process(delta):
 	self.global_position+=speed*direction.normalized()*delta
+	self.rotation.y = Vector3.RIGHT.signed_angle_to(direction,Vector3.UP)
 
 func pool():
 	self.set_physics_process(false)
@@ -37,4 +38,4 @@ func unpool(shootingPosition:Vector3,direction:Vector3)->void:
 	self.visible=true
 	self.set_physics_process(true)
 	self.global_position=shootingPosition
-	self.direction=direction
+	self.direction = direction

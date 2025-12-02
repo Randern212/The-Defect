@@ -11,6 +11,8 @@ extends CharacterBody3D
 var target:Defect=null
 var direction:Vector3=Vector3.ZERO
 var canShoot:bool=true
+var bulletInstance:Projectile
+var shootingPosition:Vector3=Vector3(6.582,10.956,0)
 
 @export var bullet:PackedScene
 @export var range:float=100
@@ -18,6 +20,10 @@ var canShoot:bool=true
 
 func _ready() -> void:
 	stateMachine.init(self,Constants.enemyStates.IDLE)
+	bulletInstance=bullet.instantiate()
+	bulletInstance.init(1,self)
+	bulletInstance.pool()
+	self.get_parent().add_child.call_deferred(bulletInstance)
 
 func _process(delta: float) -> void:
 	if target:
@@ -37,8 +43,7 @@ func cooldownOff()->void:
 	canShoot=true
 
 func shoot()->void:
-	var bulletInstance:Projectile=bullet.instantiate()
-	bulletInstance.unpool(global_position,global_position.direction_to(target.global_position))
+	bulletInstance.unpool(global_position + shootingPosition,global_position.direction_to(target.global_position))
 	attackCooldown.start(1.0)
 
 func setTarget(body:Node3D):
