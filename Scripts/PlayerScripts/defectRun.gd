@@ -10,6 +10,8 @@ func enter():
 	jumping=false
 
 func input(event: InputEvent) -> int:
+	if Input.is_action_pressed("deflect"):
+		return Constants.playerStates.DEFLECT
 	if Input.is_action_pressed("attack"):
 		return Constants.playerStates.ATTACK
 	if Input.is_action_pressed("dash"):

@@ -3,8 +3,9 @@ extends Area3D
 
 var direction:Vector3 = Vector3.ZERO
 var source:Node
+var notDeflected=false
 
-@export var speed:float=100
+@export var speed:float=200
 @export var dmg:float=10
 
 func init(targetLayer:int,source:Node) -> void:
@@ -29,7 +30,8 @@ func _on_body_entered(body: Node3D) -> void:
 	if get_collision_mask_value(1):
 		if body.has_method("selfGotHit"):
 			body.selfGotHit(dmg,self)
-	pool()
+	if notDeflected:
+		pool()
 
 func unpool(shootingPosition:Vector3,direction:Vector3)->void:
 	self.set_deferred("monitorable",true)
@@ -40,4 +42,5 @@ func unpool(shootingPosition:Vector3,direction:Vector3)->void:
 	self.direction = direction
 
 func deflected():
-	self.direction=self.global_position.direction_to(source.global_position)
+	self.direction=self.global_position.direction_to(source.global_position+Vector3(0,15,0))
+	notDeflected=false

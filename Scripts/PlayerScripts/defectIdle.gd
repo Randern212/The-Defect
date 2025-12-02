@@ -13,6 +13,8 @@ func input(event: InputEvent) -> int:
 		return Constants.playerStates.DASH
 	if Input.is_action_pressed("jump"):
 		return Constants.playerStates.JUMP
+	if Input.is_action_pressed("deflect"):
+		return Constants.playerStates.DEFLECT
 	if abs(Input.get_vector("moveLeft","moveRight","moveUp","moveDown")) > Vector2.ZERO:
 		return Constants.playerStates.RUN
 	return self.ID

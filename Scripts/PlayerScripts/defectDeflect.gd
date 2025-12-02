@@ -6,3 +6,6 @@ func _ready() -> void:
 func enter():
 	player.body.animations.play("Attack")
 	player.deflecting = true
+
+func exit():
+	player.deflecting=false

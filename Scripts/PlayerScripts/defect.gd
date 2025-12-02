@@ -30,6 +30,7 @@ func _physics_process(delta: float) -> void:
 	stateMachine.physics_process(delta)
 	body.global_rotation.y = Vector3.BACK.signed_angle_to(direction,Vector3.UP)
 	attackHitbox.position = attackOffset * direction.normalized()
+	attackHitbox.position.y=attackOffset
 	move_and_slide()
 
 func getDirection()->void:

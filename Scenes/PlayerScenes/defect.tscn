@@ -23,7 +23,7 @@ radius = 15.0
 script = ExtResource("1_qv6fe")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.6809545, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1338501, 14.280346, 0)
 shape = SubResource("CapsuleShape3D_2a7u1")
 
 [node name="stateManager" type="Node" parent="."]
@@ -59,7 +59,7 @@ script = ExtResource("9_bxa8c")
 metadata/_custom_type_script = "uid://bf0edm1ep0453"
 
 [node name="pivotedCamera" type="Node3D" parent="." node_paths=PackedStringArray("camera")]
-transform = Transform3D(-1, 0, -8.742278e-08, -3.1648362e-08, 0.93217224, 0.36201507, 8.1493084e-08, 0.36201507, -0.93217224, 0, 6.6152062, 0)
+transform = Transform3D(-1, 0, -8.742278e-08, -3.1648362e-08, 0.93217224, 0.36201507, 8.1493084e-08, 0.36201507, -0.93217224, -0.1338501, 26.576508, 0)
 script = ExtResource("4_3o3sg")
 camera = NodePath("SpringArm3D/Camera")
 metadata/_custom_type_script = "uid://cxnayrm4agxtd"
@@ -71,10 +71,10 @@ spring_length = 80.0
 transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 6.8997388e-06, 2.384186e-07, 78.92381)
 
 [node name="TheDefect" parent="." instance=ExtResource("9_37rr7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0241203, 5.7112064)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1338501, 18.93718, 5.7112064)
 
 [node name="attackhitbox" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 18.18385)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.134, 20, 18.184)
 monitoring = false
 monitorable = false
 

@@ -30,5 +30,3 @@ mesh = SubResource("CapsuleMesh_a0o1a")
 [node name="hitbox" type="CollisionShape3D" parent="."]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_v7kvr")
-
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
