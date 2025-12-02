@@ -11,6 +11,7 @@ var attackOffset:float=18.184
 var direction:Vector3=Vector3.ZERO
 var forward:Vector3=Vector3.ZERO
 var right:Vector3=Vector3.ZERO
+var deflecting=false
 
 @export var speed:float = 300
 @export var acceleration:float = 150
@@ -42,3 +43,11 @@ func getDirection()->void:
 func hitSomething(thing:Node3D)->void:
 	if thing.has_method("gotHit"):
 		thing.gotHit()
+
+func gotHit(thing:Node3D):
+	if deflecting:
+		body.animations.play("Deflect")
+		if thing.has_method("deflected"):
+			thing.deflected()
+	else:
+		print("get baaaaad")
