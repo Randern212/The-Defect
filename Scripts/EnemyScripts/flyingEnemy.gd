@@ -38,3 +38,6 @@ func shoot()->void:
 	var bulletInstance:Projectile=bullet.instantiate()
 	bulletInstance.unpool(global_position,global_position.direction_to(target.global_position))
 	attackCooldown.start(1.0)
+
+func setTarget(body:Node3D):
+	self.target=body

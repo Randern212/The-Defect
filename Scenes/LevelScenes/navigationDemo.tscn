@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bfvs44s8glia6"]
+[gd_scene load_steps=9 format=3 uid="uid://bfvs44s8glia6"]
 
+[ext_resource type="Script" uid="uid://q0lapoklnbk3" path="res://Scripts/LevelScripts/navigationLevel.gd" id="1_71eqa"]
 [ext_resource type="PackedScene" uid="uid://d0kbqvcp33oyg" path="res://Scenes/PlayerScenes/defect.tscn" id="1_s8jgq"]
 [ext_resource type="PackedScene" uid="uid://fdwmtjxslh6e" path="res://Scenes/EnemyScenes/flyingEnemy.tscn" id="2_71eqa"]
+[ext_resource type="PackedScene" uid="uid://t8wjet555817" path="res://Scenes/LevelScenes/player_detector.tscn" id="4_hiaha"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_r36bn"]
 vertices = PackedVector3Array(-499.5, 0.5, -499.5, -499.5, 0.5, 499.5, 499.5, 0.5, 499.5, 499.5, 0.5, -499.5)
@@ -23,6 +25,7 @@ glow_enabled = true
 
 [node name="NavigationDemo" type="NavigationRegion3D"]
 navigation_mesh = SubResource("NavigationMesh_r36bn")
+script = ExtResource("1_71eqa")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_s8jgq")
@@ -37,3 +40,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 23.611519, 0)
 
 [node name="FlyingEnemy" parent="." instance=ExtResource("2_71eqa")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+
+[node name="playerDetector" parent="." instance=ExtResource("4_hiaha")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 209.48698, 7.9601574, 0)
