@@ -30,8 +30,12 @@ func _process(delta: float) -> void:
 		navigationAgent.target_position=target.global_position
 
 func _physics_process(delta: float) -> void:
-	stateMachine.physics_process(delta)
+	if target:
+		var destination = navigationAgent.get_next_path_position()
+		var localDestination = destination-global_position
+		direction = localDestination.normalized()
 	self.rotation.y = Vector3.RIGHT.signed_angle_to(direction,Vector3.UP)
+	stateMachine.physics_process(delta)
 	move_and_slide()
 
 func inRange()->bool:

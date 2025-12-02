@@ -44,4 +44,4 @@ size = Vector3(1000, 1, 1000)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.846375, 7.425022, 0)
 
 [node name="playerDetector" parent="." instance=ExtResource("4_hiaha")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -97.297295, 14.363527, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.25705, 14.363527, 0)
