@@ -44,10 +44,10 @@ func hitSomething(thing:Node3D)->void:
 	if thing.has_method("gotHit"):
 		thing.gotHit()
 
-func gotHit(thing:Node3D):
+func selfGotHit(dmg:float,thing:Node3D):
 	if deflecting:
 		body.animations.play("Deflect")
 		if thing.has_method("deflected"):
 			thing.deflected()
 	else:
-		print("get baaaaad")
+		print("took: "+str(dmg))
