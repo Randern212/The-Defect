@@ -7,3 +7,13 @@ func _ready() -> void:
 
 func enter():
 	player.body.animations.play("Slash")
+	turnHitbox(true)
+
+
+func exit():
+	turnHitbox(false)
+
+
+func turnHitbox(On:bool):
+	player.attackHitbox.monitoring=On
+	player.attackHitbox.monitorable=On

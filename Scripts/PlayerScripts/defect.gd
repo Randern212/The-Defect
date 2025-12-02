@@ -38,3 +38,7 @@ func getDirection()->void:
 	direction=rawInput.y*forward+rawInput.x*right
 	direction.y=0
 	direction.normalized()
+
+func hitSomething(thing:Node3D)->void:
+	if thing.has_method("gotHit"):
+		thing.gotHit()

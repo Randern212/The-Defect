@@ -50,5 +50,8 @@ func shoot()->void:
 	bulletInstance.unpool(global_position + shootingPosition,global_position.direction_to(target.global_position))
 	attackCooldown.start(1.0)
 
-func setTarget(body:Node3D):
+func setTarget(body:Node3D)->void:
 	self.target=body
+
+func gotHit()->void:
+	print("get goood")

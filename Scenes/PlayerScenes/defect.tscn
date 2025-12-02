@@ -75,9 +75,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0241203, 5.7112064)
 
 [node name="attackhitbox" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 18.18385)
+monitoring = false
+monitorable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="attackhitbox"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.1837902)
 shape = SubResource("SphereShape3D_bxa8c")
 
 [connection signal="dashFinished" from="stateManager/dash" to="stateManager" method="forceIdle"]
+[connection signal="body_entered" from="attackhitbox" to="." method="hitSomething"]
