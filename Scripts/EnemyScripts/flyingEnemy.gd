@@ -15,6 +15,9 @@ var canShoot:bool=true
 @export var bullet:PackedScene
 @export var range:float=300
 
+func _ready() -> void:
+	stateMachine.init(self,Constants.enemyStates.IDLE)
+
 func _process(delta: float) -> void:
 	if target:
 		navigationAgent.target_position=target.global_position

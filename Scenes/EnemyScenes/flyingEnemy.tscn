@@ -131,6 +131,7 @@ _data = {
 }
 
 [node name="FlyingEnemy" type="CharacterBody3D"]
+motion_mode = 1
 script = ExtResource("1_rrnqq")
 bullet = ExtResource("2_fmmom")
 
