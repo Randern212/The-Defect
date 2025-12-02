@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://d0kbqvcp33oyg"]
+[gd_scene load_steps=14 format=3 uid="uid://d0kbqvcp33oyg"]
 
 [ext_resource type="Script" uid="uid://dny8o4yfhvbo6" path="res://Scripts/PlayerScripts/defect.gd" id="1_qv6fe"]
 [ext_resource type="Script" uid="uid://b5i6tiidfny1f" path="res://Scripts/PlayerScripts/defectStateManager.gd" id="3_qv6fe"]
@@ -13,8 +13,11 @@
 [ext_resource type="Script" uid="uid://38sovnss8ijh" path="res://Scripts/PlayerScripts/defectDeflect.gd" id="9_bxa8c"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2a7u1"]
-radius = 2.789
+radius = 5.0
 height = 31.628
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_bxa8c"]
+radius = 15.0
 
 [node name="Defect" type="CharacterBody3D"]
 script = ExtResource("1_qv6fe")
@@ -69,5 +72,12 @@ transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 6.8997388e-06
 
 [node name="TheDefect" parent="." instance=ExtResource("9_37rr7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0241203, 5.7112064)
+
+[node name="attackhitbox" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 18.18385)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="attackhitbox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.1837902)
+shape = SubResource("SphereShape3D_bxa8c")
 
 [connection signal="dashFinished" from="stateManager/dash" to="stateManager" method="forceIdle"]
