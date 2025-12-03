@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://cx6lyipmphetp"]
+
+[ext_resource type="Texture2D" uid="uid://bgc8d0csm67vj" path="res://Assets/GUI assets/barEmpty.png" id="1_b7nny"]
+[ext_resource type="Texture2D" uid="uid://c6qncbq7u7grc" path="res://Assets/GUI assets/fillGreen.png" id="2_ya5tg"]
+
+[node name="playerHUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HP" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+value = 100.0
+texture_under = ExtResource("1_b7nny")
+texture_progress = ExtResource("2_ya5tg")
