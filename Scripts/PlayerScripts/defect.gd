@@ -8,6 +8,7 @@ extends CharacterBody3D
 @onready var attackHitbox: Area3D = $attackhitbox
 @onready var dashTimer: Timer = $dashTimer
 @onready var deflectTimer: Timer = $deflectTimer
+@onready var hud: playerHUD = $playerHUD
 
 var attackOffset:float=18.184
 var direction:Vector3=Vector3.ZERO
@@ -26,7 +27,7 @@ var canDash:bool=true
 func _ready()->void:
 	stateMachine.init(self,Constants.playerStates.FALL)
 
-func _unhandled_input(event: InputEvent) -> void:
+func _input(event: InputEvent) -> void:
 	camera.cameraMouseInput(event)
 	stateMachine.input(event)
 
@@ -57,4 +58,4 @@ func selfGotHit(dmg:float,thing:Node3D)->void:
 			thing.deflected()
 			canDeflect = true
 	else:
-		print("took: "+str(dmg))
+		hud.changeValue(-dmg)

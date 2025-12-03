@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://d0kbqvcp33oyg"]
+[gd_scene load_steps=15 format=3 uid="uid://d0kbqvcp33oyg"]
 
 [ext_resource type="Script" uid="uid://dny8o4yfhvbo6" path="res://Scripts/PlayerScripts/defect.gd" id="1_qv6fe"]
 [ext_resource type="Script" uid="uid://b5i6tiidfny1f" path="res://Scripts/PlayerScripts/defectStateManager.gd" id="3_qv6fe"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://c1tf4ey5c6bhw" path="res://Scripts/PlayerScripts/defectDash.gd" id="8_bxa8c"]
 [ext_resource type="PackedScene" uid="uid://bbk4dxsftm132" path="res://Assets/Player Assets/the_defect.tscn" id="9_37rr7"]
 [ext_resource type="Script" uid="uid://38sovnss8ijh" path="res://Scripts/PlayerScripts/defectDeflect.gd" id="9_bxa8c"]
+[ext_resource type="PackedScene" uid="uid://cx6lyipmphetp" path="res://Scenes/PlayerScenes/playerHUD.tscn" id="12_dyu3s"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2a7u1"]
 radius = 5.0
@@ -85,6 +86,8 @@ shape = SubResource("SphereShape3D_bxa8c")
 [node name="dashTimer" type="Timer" parent="."]
 
 [node name="deflectTimer" type="Timer" parent="."]
+
+[node name="playerHUD" parent="." instance=ExtResource("12_dyu3s")]
 
 [connection signal="dashFinished" from="stateManager/dash" to="stateManager" method="forceIdle"]
 [connection signal="body_entered" from="attackhitbox" to="." method="hitSomething"]
