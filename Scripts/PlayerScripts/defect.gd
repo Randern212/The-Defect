@@ -6,12 +6,17 @@ extends CharacterBody3D
 @onready var body: defectModel = $TheDefect
 @onready var collider: CollisionShape3D = $CollisionShape3D
 @onready var attackHitbox: Area3D = $attackhitbox
+@onready var dashTimer: Timer = $dashTimer
+@onready var deflectTimer: Timer = $deflectTimer
 
 var attackOffset:float=18.184
 var direction:Vector3=Vector3.ZERO
 var forward:Vector3=Vector3.ZERO
 var right:Vector3=Vector3.ZERO
 var deflecting=false
+
+var canDeflect:bool=true
+var canDash:bool=true
 
 @export var speed:float = 300
 @export var acceleration:float = 150
@@ -45,10 +50,11 @@ func hitSomething(thing:Node3D)->void:
 	if thing.has_method("gotHit"):
 		thing.gotHit()
 
-func selfGotHit(dmg:float,thing:Node3D):
+func selfGotHit(dmg:float,thing:Node3D)->void:
 	if deflecting:
 		body.animations.play("Deflect")
 		if thing.has_method("deflected"):
 			thing.deflected()
+			canDeflect = true
 	else:
 		print("took: "+str(dmg))

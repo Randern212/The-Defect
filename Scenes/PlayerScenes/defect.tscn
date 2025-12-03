@@ -82,5 +82,11 @@ monitorable = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.1837902)
 shape = SubResource("SphereShape3D_bxa8c")
 
+[node name="dashTimer" type="Timer" parent="."]
+
+[node name="deflectTimer" type="Timer" parent="."]
+
 [connection signal="dashFinished" from="stateManager/dash" to="stateManager" method="forceIdle"]
 [connection signal="body_entered" from="attackhitbox" to="." method="hitSomething"]
+[connection signal="timeout" from="dashTimer" to="stateManager/dash" method="resetDashBool"]
+[connection signal="timeout" from="deflectTimer" to="stateManager/deflect" method="resetDeflectBool"]

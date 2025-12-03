@@ -3,18 +3,18 @@ extends State
 func _ready() -> void:
 	self.ID = Constants.playerStates.IDLE
 
-func enter():
+func enter()->void:
 	player.body.animations.play("Idle")
 
 func input(event: InputEvent) -> int:
 	if Input.is_action_pressed("attack"):
 		return Constants.playerStates.ATTACK
-	if Input.is_action_pressed("dash"):
+	if Input.is_action_pressed("deflect") and player.canDeflect:
+		return Constants.playerStates.DEFLECT
+	if Input.is_action_pressed("dash") and player.canDash:
 		return Constants.playerStates.DASH
 	if Input.is_action_pressed("jump"):
 		return Constants.playerStates.JUMP
-	if Input.is_action_pressed("deflect"):
-		return Constants.playerStates.DEFLECT
 	if abs(Input.get_vector("moveLeft","moveRight","moveUp","moveDown")) > Vector2.ZERO:
 		return Constants.playerStates.RUN
 	return self.ID

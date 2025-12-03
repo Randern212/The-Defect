@@ -5,11 +5,11 @@ func _ready() -> void:
 
 
 func input(event: InputEvent) -> int:
-	if Input.is_action_pressed("dash"):
+	if Input.is_action_pressed("dash") and player.canDash:
 		return Constants.playerStates.DASH
 	return ID
 
-func enter():
+func enter()->void:
 	player.velocity.y+=player.jumpForce
 	player.body.animations.play("Jump")
 

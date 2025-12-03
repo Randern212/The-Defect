@@ -5,11 +5,11 @@ func _ready() -> void:
 	self.ID=Constants.playerStates.FALL
 
 func input(event: InputEvent) -> int:
-	if Input.is_action_pressed("dash"):
+	if Input.is_action_pressed("dash") and player.canDash:
 		return Constants.playerStates.DASH
 	return ID
 
-func enter():
+func enter()->void:
 	player.body.animations.play("Jump")
 
 func physics_process(delta: float)->int:

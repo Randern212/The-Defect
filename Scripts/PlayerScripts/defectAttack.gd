@@ -5,15 +5,15 @@ extends State
 func _ready() -> void:
 	self.ID=Constants.playerStates.ATTACK
 
-func enter():
+func enter()->void:
 	player.body.animations.play("Slash")
 	turnHitbox(true)
 
 
-func exit():
+func exit()->void:
 	turnHitbox(false)
 
 
-func turnHitbox(On:bool):
+func turnHitbox(On:bool)->void:
 	player.attackHitbox.monitoring=On
 	player.attackHitbox.monitorable=On

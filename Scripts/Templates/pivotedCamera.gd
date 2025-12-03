@@ -11,7 +11,7 @@ var cameraInputDirection:Vector2=Vector2.ZERO
 func setCameraDistance(distance:float)->void:
 	self.cameraSpring.spring_length = distance
 
-func cameraMouseInput(event:InputEvent):
+func cameraMouseInput(event:InputEvent)->void:
 	var isMoving:bool=(event is InputEventMouseMotion)
 	if isMoving:
 		cameraInputDirection=event.screen_relative*mouseSensitiviy

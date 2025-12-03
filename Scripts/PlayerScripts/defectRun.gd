@@ -10,12 +10,12 @@ func enter():
 	jumping=false
 
 func input(event: InputEvent) -> int:
-	if Input.is_action_pressed("deflect"):
+	if Input.is_action_pressed("deflect") and player.canDeflect:
 		return Constants.playerStates.DEFLECT
+	if Input.is_action_pressed("dash") and player.canDash:
+		return Constants.playerStates.DASH
 	if Input.is_action_pressed("attack"):
 		return Constants.playerStates.ATTACK
-	if Input.is_action_pressed("dash"):
-		return Constants.playerStates.DASH
 	if Input.is_action_pressed("jump"):
 		jumping=true
 		return Constants.playerStates.JUMP
@@ -32,6 +32,6 @@ func physics_process(delta: float) -> int:
 	player.velocity=player.velocity.move_toward(player.direction*player.speed,delta*player.acceleration)
 	return ID
 
-func exit():
+func exit()->void:
 	if not jumping:
 		player.velocity=Vector3.ZERO

@@ -6,5 +6,5 @@ signal animationFinished(animationName)
 @onready var animations: AnimationPlayer = $AnimationPlayer
 @onready var coat: SoftBody3D = $Coat
 
-func finished(animationName):
+func finished(animationName)->void:
 	animationFinished.emit(animationName)
