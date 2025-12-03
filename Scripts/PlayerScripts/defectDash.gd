@@ -4,7 +4,7 @@ extends State
 @export var dashDuration:float=0.25
 
 var dashDirection:Vector3=Vector3.ZERO
-var dashCD:float=0.3
+var dashCD:float=0.6
 
 signal dashFinished
 
@@ -20,7 +20,6 @@ func enter()->void:
 	freeTimer.timeout.connect(freeTimer.queue_free)
 	freeTimer.start(dashDuration)
 	player.canDash=false
-	player.dashTimer.start(dashCD)
 	
 func physics_process(delta: float)->int:
 	delta*=1.5
@@ -30,6 +29,7 @@ func physics_process(delta: float)->int:
 
 func exit()->void:
 	player.velocity=Vector3.ZERO
+	player.dashTimer.start(dashCD)
 
 func resetDashBool()->void:
 	player.canDash=true
