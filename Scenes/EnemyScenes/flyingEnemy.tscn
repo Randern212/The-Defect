@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://8w7if6xrcgoo" path="res://Scripts/EnemyScripts/flyingEnemyAttack.gd" id="6_1rljf"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_rrnqq"]
-radius = 4.45
+radius = 10.013
 
 [sub_resource type="Animation" id="Animation_1rljf"]
 resource_name = "IdleHovering"
@@ -232,7 +232,7 @@ script = ExtResource("1_rrnqq")
 bullet = ExtResource("2_fmmom")
 
 [node name="BatteryEye" parent="." instance=ExtResource("1_66a0h")]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 15, 0)
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 15, 0)
 
 [node name="stateManager" type="Node" parent="."]
 script = ExtResource("3_1rljf")

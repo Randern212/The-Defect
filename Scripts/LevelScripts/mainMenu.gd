@@ -15,6 +15,6 @@ func startGame()->void:
 func showControls()->void:
 #	get_tree().change_scene_to_file(Constants.sceneDictionary[Constants.Scenes.CONTROLS])
 	pass
-	
+
 func quitGame()->void:
 	get_tree().quit()

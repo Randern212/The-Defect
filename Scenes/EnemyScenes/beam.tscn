@@ -12,11 +12,11 @@ emission_energy_multiplier = 0.5
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_a0o1a"]
 material = SubResource("StandardMaterial3D_bh52o")
-radius = 0.4
+radius = 0.8
 height = 6.0
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_v7kvr"]
-radius = 0.4
+radius = 0.8
 height = 6.0
 
 [node name="Beam" type="Area3D"]
