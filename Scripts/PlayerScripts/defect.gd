@@ -48,8 +48,8 @@ func getDirection()->void:
 	direction.normalized()
 
 func hitSomething(thing:Node3D)->void:
-	if thing.has_method("gotHit"):
-		thing.gotHit()
+	if thing.has_method("selfGotHit") and not thing is Defect:
+		thing.selfGotHit(10,self)
 
 func selfGotHit(dmg:float,thing:Node3D)->void:
 	if deflecting:
@@ -58,4 +58,6 @@ func selfGotHit(dmg:float,thing:Node3D)->void:
 			thing.deflected()
 			canDeflect = true
 	else:
+		if thing.has_method("pool"):
+			thing.pool()
 		hud.changeValue(-dmg)

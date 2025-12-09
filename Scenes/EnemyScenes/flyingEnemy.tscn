@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://fdwmtjxslh6e"]
+[gd_scene load_steps=16 format=3 uid="uid://fdwmtjxslh6e"]
 
 [ext_resource type="PackedScene" uid="uid://b7tk275c6i62x" path="res://Assets/EnemyAssets/BatteryEye.glb" id="1_66a0h"]
 [ext_resource type="Script" uid="uid://beffybvngk8so" path="res://Scripts/EnemyScripts/flyingEnemy.gd" id="1_rrnqq"]
@@ -226,7 +226,19 @@ _data = {
 &"attack": SubResource("Animation_vxhm5")
 }
 
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_fmmom"]
+transparency = 1
+blend_mode = 4
+albedo_color = Color(0, 0.5647059, 0.22352941, 0.47843137)
+
+[sub_resource type="SphereMesh" id="SphereMesh_l1xe0"]
+material = SubResource("ORMMaterial3D_fmmom")
+radial_segments = 16
+rings = 8
+
 [node name="FlyingEnemy" type="CharacterBody3D"]
+collision_layer = 2
+collision_mask = 2
 motion_mode = 1
 script = ExtResource("1_rrnqq")
 bullet = ExtResource("2_fmmom")
@@ -263,6 +275,10 @@ libraries = {
 }
 
 [node name="attackCooldown" type="Timer" parent="."]
+
+[node name="Shield" type="MeshInstance3D" parent="."]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 15, 0)
+mesh = SubResource("SphereMesh_l1xe0")
 
 [connection signal="animation_finished" from="animations" to="stateManager" method="forceChangeState"]
 [connection signal="timeout" from="attackCooldown" to="." method="cooldownOff"]

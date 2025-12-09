@@ -25,13 +25,22 @@ func pool():
 	self.set_deferred("monitorable",false)
 	self.set_deferred("monitoring",false)
 	self.visible=false
+	self.notDeflected=false
+	self.set_collision_mask_value(1,true)
+	self.set_collision_mask_value(2,false)
 
 func _on_body_entered(body: Node3D) -> void:
+	var itHit:bool=false
 	if get_collision_mask_value(1):
 		if body.has_method("selfGotHit"):
 			body.selfGotHit(dmg,self)
-	if notDeflected:
-		pool()
+			if notDeflected:
+				print(notDeflected)
+				itHit=true
+	if get_collision_mask_value(2):
+		if body.has_method("selfGotHit") and not notDeflected:
+			body.selfGotHit(dmg,self)
+			itHit=true
 
 func unpool(shootingPosition:Vector3,direction:Vector3)->void:
 	self.set_deferred("monitorable",true)
@@ -40,7 +49,10 @@ func unpool(shootingPosition:Vector3,direction:Vector3)->void:
 	self.set_physics_process(true)
 	self.global_position=shootingPosition
 	self.direction = direction
+	self.notDeflected=true
 
 func deflected():
 	self.direction=self.global_position.direction_to(source.global_position+Vector3(0,15,0))
 	notDeflected=false
+	self.set_collision_mask_value(2,true)
+	self.set_collision_mask_value(1,false)

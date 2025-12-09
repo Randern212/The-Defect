@@ -7,6 +7,7 @@ extends CharacterBody3D
 @onready var navigationAgent: NavigationAgent3D = $NavigationAgent
 @onready var animations: AnimationPlayer = $animations
 @onready var attackCooldown: Timer = $attackCooldown
+@onready var shield: MeshInstance3D = $Shield
 
 var target:Defect=null
 var direction:Vector3=Vector3.ZERO
@@ -14,6 +15,7 @@ var canShoot:bool=true
 var bulletInstance:Projectile
 var shootingPosition:Vector3=Vector3(6.582,10.956,0)
 
+@export var shieldActive:bool=true
 @export var bullet:PackedScene
 @export var range:float=100
 @export var speed:float=100
@@ -53,5 +55,11 @@ func shoot()->void:
 func setTarget(body:Node3D)->void:
 	self.target=body
 
-func gotHit()->void:
-	print("get goood")
+func selfGotHit(dmg,source:Node)->void:
+	if shieldActive:
+		shieldActive=false
+		shield.visible=false
+	else:
+		print("TookDmg")
+	if source.has_method("pool"):
+		source.pool()
