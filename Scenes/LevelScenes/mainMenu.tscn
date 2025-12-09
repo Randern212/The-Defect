@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://1lvm27q5jg0n"]
+
+[ext_resource type="Script" uid="uid://bq0iinxo205fl" path="res://Scripts/LevelScripts/mainMenu.gd" id="1_d6c1v"]
+
+[node name="Main Menu" type="Node2D"]
+script = ExtResource("1_d6c1v")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Start" type="TextureButton" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Controls" type="TextureButton" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Quit" type="TextureButton" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0

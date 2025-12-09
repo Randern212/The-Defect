@@ -18,3 +18,13 @@ enum enemyStates
 	CHASE,
 	ATTACK
 }
+enum Scenes
+{
+	NAVIGATIONDEMO,
+	MAINMENU,
+	CONTROLS,
+}
+const sceneDictionary:Dictionary={
+	Scenes.NAVIGATIONDEMO:"uid://bfvs44s8glia6",
+	Scenes.MAINMENU:"uid://1lvm27q5jg0n",
+}
