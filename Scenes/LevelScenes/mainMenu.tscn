@@ -1,11 +1,24 @@
-[gd_scene load_steps=2 format=3 uid="uid://1lvm27q5jg0n"]
+[gd_scene load_steps=7 format=3 uid="uid://1lvm27q5jg0n"]
 
 [ext_resource type="Script" uid="uid://bq0iinxo205fl" path="res://Scripts/LevelScripts/mainMenu.gd" id="1_d6c1v"]
+[ext_resource type="Texture2D" uid="uid://d3gfp7cseqv2w" path="res://Assets/GUI assets/defect button unpluggedd.png" id="2_2ssvc"]
+[ext_resource type="Texture2D" uid="uid://c4c8wh32uxec3" path="res://Assets/GUI assets/Defect menu.png" id="2_ynrqf"]
+[ext_resource type="Texture2D" uid="uid://t63kmd3373do" path="res://Assets/GUI assets/defect button plugged.png" id="3_ynrqf"]
+[ext_resource type="FontFile" uid="uid://8r5wljv7iv6e" path="res://Assets/GUI assets/OptimusPrinceps.ttf" id="5_03n0m"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7toe1"]
+font = ExtResource("5_03n0m")
+font_size = 60
+outline_size = 14
+outline_color = Color(0, 0, 0, 1)
 
 [node name="Main Menu" type="Node2D"]
 script = ExtResource("1_d6c1v")
 
 [node name="BackGround" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_ynrqf")
+centered = false
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -15,15 +28,61 @@ offset_bottom = 40.0
 
 [node name="Start" type="TextureButton" parent="Control"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 59.0
+offset_top = 475.0
+offset_right = 464.0
+offset_bottom = 745.0
+texture_normal = ExtResource("2_2ssvc")
+texture_hover = ExtResource("3_ynrqf")
+
+[node name="Label" type="Label" parent="Control/Start"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 101.0
+offset_right = 318.0
+offset_bottom = 254.0
+text = "	Start
+"
+label_settings = SubResource("LabelSettings_7toe1")
+horizontal_alignment = 1
 
 [node name="Controls" type="TextureButton" parent="Control"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 59.0
+offset_top = 636.0
+offset_right = 464.0
+offset_bottom = 906.0
+texture_normal = ExtResource("2_2ssvc")
+texture_hover = ExtResource("3_ynrqf")
+
+[node name="Label2" type="Label" parent="Control/Controls"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 102.0
+offset_right = 318.0
+offset_bottom = 300.0
+text = "	Controls
+
+"
+label_settings = SubResource("LabelSettings_7toe1")
+horizontal_alignment = 1
 
 [node name="Quit" type="TextureButton" parent="Control"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 59.0
+offset_top = 802.0
+offset_right = 464.0
+offset_bottom = 1072.0
+texture_normal = ExtResource("2_2ssvc")
+texture_hover = ExtResource("3_ynrqf")
+
+[node name="Label3" type="Label" parent="Control/Quit"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 103.0
+offset_right = 318.0
+offset_bottom = 256.0
+text = "	Quit
+"
+label_settings = SubResource("LabelSettings_7toe1")
+horizontal_alignment = 1
