@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cfo2vw863dmqg"
+path="res://.godot/imported/Coat.obj-fc8164ffa5eb67a5555931398a39ab0f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Coat.obj-fc8164ffa5eb67a5555931398a39ab0f.mesh"]
+
+source_file="res://Assets/Player Assets/Coat.obj"
+dest_files=["res://.godot/imported/Coat.obj-fc8164ffa5eb67a5555931398a39ab0f.mesh", "res://.godot/imported/Coat.obj-fc8164ffa5eb67a5555931398a39ab0f.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(9, 9, 9)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
