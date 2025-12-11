@@ -1,0 +1,150 @@
+[gd_scene load_steps=12 format=3 uid="uid://bqeu1cg57046u"]
+
+[ext_resource type="Texture2D" uid="uid://c4c8wh32uxec3" path="res://Assets/GUI assets/Defect menu.png" id="1_aidow"]
+[ext_resource type="Script" uid="uid://cgwt1nugudy31" path="res://Scripts/LevelScripts/controlsMenu.gd" id="1_x2lax"]
+[ext_resource type="FontFile" uid="uid://8r5wljv7iv6e" path="res://Assets/GUI assets/OptimusPrinceps.ttf" id="2_dvn4e"]
+[ext_resource type="Texture2D" uid="uid://d3gfp7cseqv2w" path="res://Assets/GUI assets/defect button unpluggedd.png" id="3_tocvl"]
+[ext_resource type="Texture2D" uid="uid://bri55i14lb5ok" path="res://Assets/GUI assets/defect button pressed.png" id="4_x2lax"]
+[ext_resource type="Texture2D" uid="uid://t63kmd3373do" path="res://Assets/GUI assets/defect button plugged.png" id="5_eggvv"]
+
+[sub_resource type="Gradient" id="Gradient_aidow"]
+offsets = PackedFloat32Array(0, 0.97333336, 1)
+colors = PackedColorArray(0, 0, 0, 0.7254902, 0.69411767, 0.69411767, 0.69411767, 0.5529412, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_dvn4e"]
+gradient = SubResource("Gradient_aidow")
+width = 1920
+height = 1080
+fill_from = Vector2(1, 1)
+fill_to = Vector2(1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_06s71"]
+font = ExtResource("2_dvn4e")
+font_size = 80
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_dvn4e"]
+font = ExtResource("2_dvn4e")
+font_size = 80
+font_color = Color(2.7915835e-06, 0.78468186, 0.50884277, 1)
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_mei8t"]
+font = ExtResource("2_dvn4e")
+font_size = 60
+outline_size = 14
+outline_color = Color(0, 0, 0, 1)
+
+[node name="ControlsMenu" type="Node2D"]
+script = ExtResource("1_x2lax")
+
+[node name="Background" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_aidow")
+centered = false
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("GradientTexture2D_dvn4e")
+
+[node name="Movements" type="Label" parent="."]
+offset_left = 498.0
+offset_top = 351.0
+offset_right = 903.0
+offset_bottom = 436.0
+text = "Movements"
+label_settings = SubResource("LabelSettings_06s71")
+
+[node name="WASD" type="Label" parent="."]
+offset_left = 1034.0
+offset_top = 350.0
+offset_right = 1439.0
+offset_bottom = 435.0
+text = "W, A, S, D"
+label_settings = SubResource("LabelSettings_dvn4e")
+
+[node name="LeftShift" type="Label" parent="."]
+offset_left = 1034.0
+offset_top = 435.0
+offset_right = 1439.0
+offset_bottom = 520.0
+text = "Left Shift"
+label_settings = SubResource("LabelSettings_dvn4e")
+
+[node name="SpaceBar" type="Label" parent="."]
+offset_left = 1034.0
+offset_top = 526.0
+offset_right = 1439.0
+offset_bottom = 611.0
+text = "Space Bar"
+label_settings = SubResource("LabelSettings_dvn4e")
+
+[node name="LeftClick" type="Label" parent="."]
+offset_left = 1034.0
+offset_top = 618.0
+offset_right = 1439.0
+offset_bottom = 703.0
+text = "Left Click"
+label_settings = SubResource("LabelSettings_dvn4e")
+
+[node name="RightClick" type="Label" parent="."]
+offset_left = 1034.0
+offset_top = 697.0
+offset_right = 1439.0
+offset_bottom = 782.0
+text = "Right Click"
+label_settings = SubResource("LabelSettings_dvn4e")
+
+[node name="Deflect" type="Label" parent="."]
+offset_left = 498.0
+offset_top = 711.0
+offset_right = 903.0
+offset_bottom = 796.0
+text = "Deflect"
+label_settings = SubResource("LabelSettings_06s71")
+
+[node name="Dash" type="Label" parent="."]
+offset_left = 498.0
+offset_top = 446.0
+offset_right = 903.0
+offset_bottom = 531.0
+text = "Dash"
+label_settings = SubResource("LabelSettings_06s71")
+
+[node name="Jump" type="Label" parent="."]
+offset_left = 498.0
+offset_top = 536.0
+offset_right = 903.0
+offset_bottom = 621.0
+text = "Jump"
+label_settings = SubResource("LabelSettings_06s71")
+
+[node name="Attack" type="Label" parent="."]
+offset_left = 498.0
+offset_top = 629.0
+offset_right = 903.0
+offset_bottom = 714.0
+text = "Attack"
+label_settings = SubResource("LabelSettings_06s71")
+
+[node name="Back" type="TextureButton" parent="."]
+offset_left = 59.0
+offset_top = 802.0
+offset_right = 464.0
+offset_bottom = 1072.0
+texture_normal = ExtResource("3_tocvl")
+texture_pressed = ExtResource("4_x2lax")
+texture_hover = ExtResource("5_eggvv")
+
+[node name="BackLabel" type="Label" parent="Back"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 103.0
+offset_right = 318.0
+offset_bottom = 256.0
+text = "	Back"
+label_settings = SubResource("LabelSettings_mei8t")
+horizontal_alignment = 1

@@ -13,8 +13,7 @@ func startGame()->void:
 	get_tree().change_scene_to_file(Constants.sceneDictionary[Constants.Scenes.NAVIGATIONDEMO])
 
 func showControls()->void:
-#	get_tree().change_scene_to_file(Constants.sceneDictionary[Constants.Scenes.CONTROLS])
-	pass
+	get_tree().change_scene_to_file(Constants.sceneDictionary[Constants.Scenes.CONTROLS])
 
 func quitGame()->void:
 	get_tree().quit()
