@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://1lvm27q5jg0n"]
+[gd_scene load_steps=8 format=3 uid="uid://1lvm27q5jg0n"]
 
 [ext_resource type="Script" uid="uid://bq0iinxo205fl" path="res://Scripts/LevelScripts/mainMenu.gd" id="1_d6c1v"]
 [ext_resource type="Texture2D" uid="uid://d3gfp7cseqv2w" path="res://Assets/GUI assets/defect button unpluggedd.png" id="2_2ssvc"]
 [ext_resource type="Texture2D" uid="uid://c4c8wh32uxec3" path="res://Assets/GUI assets/Defect menu.png" id="2_ynrqf"]
 [ext_resource type="Texture2D" uid="uid://t63kmd3373do" path="res://Assets/GUI assets/defect button plugged.png" id="3_ynrqf"]
+[ext_resource type="Texture2D" uid="uid://bri55i14lb5ok" path="res://Assets/GUI assets/defect button pressed.png" id="4_7toe1"]
 [ext_resource type="FontFile" uid="uid://8r5wljv7iv6e" path="res://Assets/GUI assets/OptimusPrinceps.ttf" id="5_03n0m"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_7toe1"]
@@ -33,6 +34,7 @@ offset_top = 475.0
 offset_right = 464.0
 offset_bottom = 745.0
 texture_normal = ExtResource("2_2ssvc")
+texture_pressed = ExtResource("4_7toe1")
 texture_hover = ExtResource("3_ynrqf")
 
 [node name="Label" type="Label" parent="Control/Start"]
@@ -53,6 +55,7 @@ offset_top = 636.0
 offset_right = 464.0
 offset_bottom = 906.0
 texture_normal = ExtResource("2_2ssvc")
+texture_pressed = ExtResource("4_7toe1")
 texture_hover = ExtResource("3_ynrqf")
 
 [node name="Label2" type="Label" parent="Control/Controls"]
@@ -74,6 +77,7 @@ offset_top = 802.0
 offset_right = 464.0
 offset_bottom = 1072.0
 texture_normal = ExtResource("2_2ssvc")
+texture_pressed = ExtResource("4_7toe1")
 texture_hover = ExtResource("3_ynrqf")
 
 [node name="Label3" type="Label" parent="Control/Quit"]
