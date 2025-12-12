@@ -1,0 +1,88 @@
+[gd_scene load_steps=15 format=3 uid="uid://bjy0y3fafo42g"]
+
+[ext_resource type="Material" uid="uid://dyumoe5acgxj3" path="res://Assets/Shaders/hitFlareProcessing.tres" id="1_8dnuu"]
+
+[sub_resource type="Gradient" id="Gradient_8dnuu"]
+offsets = PackedFloat32Array(0, 0.43636364)
+colors = PackedColorArray(1.077079, 1.077079, 1.077079, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_qu60f"]
+gradient = SubResource("Gradient_8dnuu")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lk28d"]
+transparency = 1
+cull_mode = 2
+albedo_color = Color(1.5229772, 0.9598853, 0.4202555, 1)
+albedo_texture = SubResource("GradientTexture2D_qu60f")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_og70r"]
+material = SubResource("StandardMaterial3D_lk28d")
+
+[sub_resource type="Curve" id="Curve_8dnuu"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.8333333, 0.8539326), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_qu60f"]
+curve = SubResource("Curve_8dnuu")
+
+[sub_resource type="Curve" id="Curve_h1rib"]
+_data = [Vector2(0.045454532, 0), 0.0, 0.0, 0, 0, Vector2(0.5151515, 0.13483155), 0.0, 0.0, 0, 0, Vector2(0.86363643, 0.5617978), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_8dnuu"]
+curve = SubResource("Curve_h1rib")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qu60f"]
+gravity = Vector3(0, 0, 0)
+scale_min = 3.5
+scale_max = 4.0
+scale_curve = SubResource("CurveTexture_8dnuu")
+alpha_curve = SubResource("CurveTexture_qu60f")
+
+[sub_resource type="Gradient" id="Gradient_lk28d"]
+offsets = PackedFloat32Array(0.21818182, 0.5090909, 0.77272725)
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1, 0.1254902, 0.1254902, 0.1254902, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_og70r"]
+gradient = SubResource("Gradient_lk28d")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fup5l"]
+transparency = 1
+cull_mode = 2
+albedo_color = Color(1.523, 0.96, 0.42, 1)
+albedo_texture = SubResource("GradientTexture2D_og70r")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_21een"]
+material = SubResource("StandardMaterial3D_fup5l")
+
+[node name="HitFlare" type="GPUParticles3D"]
+emitting = false
+amount = 1
+lifetime = 0.25
+one_shot = true
+fixed_fps = 60
+process_material = ExtResource("1_8dnuu")
+draw_pass_1 = SubResource("QuadMesh_og70r")
+
+[node name="HitShockwave" type="GPUParticles3D" parent="."]
+emitting = false
+amount = 1
+lifetime = 0.4
+one_shot = true
+process_material = SubResource("ParticleProcessMaterial_qu60f")
+draw_pass_1 = SubResource("QuadMesh_21een")

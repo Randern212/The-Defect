@@ -29,7 +29,7 @@ func physics_process(delta: float) -> int:
 		return Constants.playerStates.FALL
 	if player.direction==Vector3.ZERO and player.is_on_floor():
 		return Constants.playerStates.IDLE
-	player.velocity=player.velocity.move_toward(player.direction*player.speed,delta*player.acceleration)
+	player.velocity = player.direction * player.speed
 	return ID
 
 func exit()->void:

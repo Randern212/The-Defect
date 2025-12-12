@@ -19,7 +19,7 @@ var deflecting=false
 var canDeflect:bool=true
 var canDash:bool=true
 
-@export var speed:float = 300
+@export var speed:float = 120
 @export var acceleration:float = 150
 @export var jumpForce:float = 180
 @export var gravity:float=-300
