@@ -66,6 +66,7 @@ camera = NodePath("SpringArm3D/Camera")
 metadata/_custom_type_script = "uid://cxnayrm4agxtd"
 
 [node name="SpringArm3D" type="SpringArm3D" parent="pivotedCamera"]
+collision_mask = 2
 spring_length = 80.0
 
 [node name="Camera" type="Camera3D" parent="pivotedCamera/SpringArm3D"]
