@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bnsrguh200nd6"]
+[gd_scene load_steps=15 format=3 uid="uid://bnsrguh200nd6"]
 
 [ext_resource type="Script" uid="uid://q0lapoklnbk3" path="res://Scripts/LevelScripts/navigationLevel.gd" id="1_uhgln"]
 [ext_resource type="Material" uid="uid://dvinoiofesdxa" path="res://Assets/LevelAssets/wall Materials.tres" id="2_8wdus"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://b4wrfxd3m7ijo" path="res://Assets/LevelAssets/lamp.glb" id="5_wttbp"]
 [ext_resource type="PackedScene" uid="uid://bcwh4vpux6jiu" path="res://Assets/LevelAssets/signal tower.glb" id="7_b25ti"]
 [ext_resource type="PackedScene" uid="uid://d0kbqvcp33oyg" path="res://Scenes/PlayerScenes/defect.tscn" id="8_kw2r0"]
+[ext_resource type="PackedScene" uid="uid://t8wjet555817" path="res://Scenes/LevelScenes/player_detector.tscn" id="9_8ogec"]
+[ext_resource type="PackedScene" uid="uid://fdwmtjxslh6e" path="res://Scenes/EnemyScenes/flyingEnemy.tscn" id="10_t3wjw"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_uhgln"]
 vertices = PackedVector3Array(-51.53296, 120, -299.707, 48.46704, 120, -299.707, 98.46704, 120, -309.707, 98.46704, 120, -399.707, -101.53296, 120, -399.707, -101.53296, 120, -309.707, -51.53296, 120, 210.293, 48.46704, 120, 210.293, -31.532959, 20, -309.707, 38.46704, 20, -309.707, 88.46704, 20, -319.707, 88.46704, 20, -389.707, -81.53296, 20, -389.707, -81.53296, 20, -319.707, 38.46704, 20, 300.293, -31.532959, 20, 300.293, -31.532959, 20, 380.293, 238.46704, 20, 380.293, 238.46704, 20, 310.293, 288.46704, 230, 180.293, 288.46704, 230, 590.29297, 608.46704, 230, 590.29297, 608.46704, 230, 180.293, 58.46704, 120, 300.293, -61.53296, 120, 300.293, -291.53296, 120, 400.293, 268.46704, 120, 400.293, 268.46704, 120, 300.293, -291.53296, 120, 300.293, 318.46704, 20, 390.293, 318.46704, 20, 300.293, 588.46704, 20, 570.29297, 588.46704, 20, 200.293, 318.46704, 20, 200.293, 318.46704, 20, 570.29297, -301.53296, 20, 380.293, -1091.533, 20, 300.293, -1091.533, 20, 400.293, -311.53296, 20, 400.293, -1091.533, 20, 460.293, -1091.533, 20, 950.29297, -991.53296, 20, 950.29297, -991.53296, 20, 460.293, -1271.533, 230, 1050.293, -1271.533, 230, 1360.293, -871.53296, 230, 1360.293, -871.53296, 230, 1050.293, -881.53296, 20, 1070.293, -1081.533, 20, 1050.293, -1091.533, 20, 1070.293, -1251.533, 20, 1070.293, -1251.533, 20, 1340.293, -881.53296, 20, 1340.293)
@@ -17,10 +19,28 @@ cell_size = 10.0
 cell_height = 10.0
 border_size = 10.0
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_t3wjw"]
+sky_top_color = Color(0.75227064, 0.2152116, 0, 1)
+sky_horizon_color = Color(0.44971585, 0.31544104, 0.26162896, 1)
+ground_bottom_color = Color(0.00014731457, 0.000107040534, 7.03984e-05, 1)
+ground_horizon_color = Color(0.44971585, 0.31544104, 0.26162896, 1)
+energy_multiplier = 0.5
+
+[sub_resource type="Sky" id="Sky_s4nsl"]
+sky_material = SubResource("ProceduralSkyMaterial_t3wjw")
+
+[sub_resource type="Environment" id="Environment_abrkr"]
+background_mode = 2
+sky = SubResource("Sky_s4nsl")
+tonemap_mode = 2
+
 [node name="Level1" type="NavigationRegion3D"]
 navigation_mesh = SubResource("NavigationMesh_uhgln")
 script = ExtResource("1_uhgln")
 metadata/_custom_type_script = "uid://q0lapoklnbk3"
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_abrkr")
 
 [node name="Starting room" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 50, -354.707)
@@ -264,4 +284,52 @@ transform = Transform3D(0.5, 0, 0, 0, 1, 0, 0, 0, 0.5, -615.9727, -1062.707, -93
 transform = Transform3D(0.5, 0, 0, 0, 1, 0, 0, 0, 0.5, 324.64124, -472.7066, -1131.55)
 
 [node name="Defect" parent="." instance=ExtResource("8_kw2r0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.421602, -318.48163)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1948891, 10.421602, -319.00745)
+
+[node name="FlyingEnemy1" parent="." instance=ExtResource("10_t3wjw")]
+transform = Transform3D(-0.65024394, 0, 0.7597255, 0, 1, 0, -0.7597255, 0, -0.65024394, 499.24893, 24.63607, 548.3356)
+ID = 2
+
+[node name="FlyingEnemy2" parent="." instance=ExtResource("10_t3wjw")]
+transform = Transform3D(-0.8031501, 0, -0.5957764, 0, 1, 0, 0.5957764, 0, -0.8031501, 434.6339, 30.11528, 207.16235)
+ID = 2
+
+[node name="FlyingEnemy3" parent="." instance=ExtResource("10_t3wjw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1219.3013, 24.408852, 1236.7888)
+ID = 4
+
+[node name="FlyingEnemy4" parent="." instance=ExtResource("10_t3wjw")]
+transform = Transform3D(-0.31400907, 0, 0.94942, 0, 1, 0, -0.94942, 0, -0.31400907, -956.5724, 28.823647, 1273.8109)
+ID = 4
+
+[node name="FlyingEnemy5" parent="." instance=ExtResource("10_t3wjw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1037.7277, 13.690212, 352.39114)
+ID = 2
+
+[node name="FlyingEnemy6" parent="." instance=ExtResource("10_t3wjw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1037.7277, 30.754623, 902.5843)
+ID = 3
+
+[node name="FlyingEnemy7" parent="." instance=ExtResource("10_t3wjw")]
+transform = Transform3D(-1, 0, -3.8941437e-07, 0, 1, 0, 3.8941437e-07, 0, -1, 149.37857, 17.136345, 337.88675)
+ID = 1
+
+[node name="playerDetector4" parent="." instance=ExtResource("9_8ogec")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -986.30133, 51.947144, 425.23285)
+ID = 3
+
+[node name="playerDetector3" parent="." instance=ExtResource("9_8ogec")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -271.11496, 51.947144, 366.9593)
+ID = 2
+
+[node name="playerDetector2" parent="." instance=ExtResource("9_8ogec")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 223.89842, 51.947144, 351.17175)
+ID = 2
+
+[node name="playerDetector" parent="." instance=ExtResource("9_8ogec")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 51.947144, 200.9621)
+ID = 1
+
+[node name="playerDetector5" parent="." instance=ExtResource("9_8ogec")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1036.9818, 27.712173, 1049.8746)
+ID = 4
