@@ -1,9 +1,18 @@
-[gd_scene load_steps=18 format=4 uid="uid://bbk4dxsftm132"]
+[gd_scene load_steps=20 format=4 uid="uid://bbk4dxsftm132"]
 
 [ext_resource type="Script" uid="uid://cdhb3uf5swra7" path="res://Scripts/PlayerScripts/defectModel.gd" id="1_tcred"]
 [ext_resource type="ArrayMesh" uid="uid://cfo2vw863dmqg" path="res://Assets/Player Assets/Coat.obj" id="2_tcred"]
+[ext_resource type="Material" uid="uid://d04p2r0e1tno7" path="res://Assets/Shaders/outlineMaterial.tres" id="3_f335x"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tbnk0"]
+cull_mode = 1
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+grow = true
+grow_amount = 0.002
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f335x"]
+next_pass = SubResource("StandardMaterial3D_tbnk0")
 albedo_color = Color(0.47843137, 0.47843137, 0.47843137, 1)
 metallic = 0.45
 
@@ -2301,6 +2310,7 @@ _data = {
 }
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tcred"]
+next_pass = ExtResource("3_f335x")
 vertex_color_use_as_albedo = true
 albedo_color = Color(0.5921569, 0.09803922, 0.023529412, 1)
 

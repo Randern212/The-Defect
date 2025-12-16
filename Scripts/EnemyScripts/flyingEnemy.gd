@@ -63,7 +63,6 @@ func selfGotHit(dmg,source:Node)->void:
 		shield.visible=false
 	elif not shieldActive:
 		hp-=dmg
-		print("dmg")
 		if hp<=0:
 			self.queue_free()
 	if source.has_method("pool"):
