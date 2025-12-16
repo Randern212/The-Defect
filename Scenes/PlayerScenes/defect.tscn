@@ -77,6 +77,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1338501, 18.93718, -0.4152
 
 [node name="attackhitbox" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.134, 20, 18.184)
+collision_layer = 2
+collision_mask = 2
 monitoring = false
 monitorable = false
 

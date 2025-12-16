@@ -267,7 +267,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, 0)
 shape = SubResource("SphereShape3D_rrnqq")
 
 [node name="NavigationAgent" type="NavigationAgent3D" parent="."]
-debug_enabled = true
 
 [node name="animations" type="AnimationPlayer" parent="."]
 libraries = {

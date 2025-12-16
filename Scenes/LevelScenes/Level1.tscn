@@ -20,10 +20,10 @@ cell_height = 10.0
 border_size = 10.0
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_t3wjw"]
-sky_top_color = Color(0.75227064, 0.2152116, 0, 1)
-sky_horizon_color = Color(0.44971585, 0.31544104, 0.26162896, 1)
+sky_top_color = Color(0.94539434, 0.7433076, 0.6858351, 1)
+sky_horizon_color = Color(0.8881825, 0.8376508, 0.82327354, 1)
 ground_bottom_color = Color(0.00014731457, 0.000107040534, 7.03984e-05, 1)
-ground_horizon_color = Color(0.44971585, 0.31544104, 0.26162896, 1)
+ground_horizon_color = Color(0.8881825, 0.8376508, 0.82327354, 1)
 energy_multiplier = 0.5
 
 [sub_resource type="Sky" id="Sky_s4nsl"]
@@ -209,11 +209,17 @@ transform = Transform3D(-4.371139e-07, 10, -4.371139e-07, 0, -4.371139e-07, -10,
 [node name="HallPipes2" parent="Hall" instance=ExtResource("4_wtj2j")]
 transform = Transform3D(-4.371139e-07, -10, 4.371139e-07, 0, -4.371139e-07, -10, 10, -4.371139e-07, 1.9106854e-14, 40.08475, 46.246704, 170.8998)
 
-[node name="Room2Light" type="OmniLight3D" parent="Hall"]
+[node name="HallLight" type="OmniLight3D" parent="Hall"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 49.542, 0)
 light_color = Color(1.353256, 0.8193202, 0.5575868, 1)
-light_energy = 15.0
+light_energy = 5.0
 omni_range = 200.0
+
+[node name="HallSpotLight" type="SpotLight3D" parent="Hall"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 49.542, 0)
+light_color = Color(1.353, 0.819, 0.558, 1)
+light_energy = 15.0
+spot_range = 130.264
 
 [node name="Hall2" type="CSGBox3D" parent="."]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 50, 349.743)
@@ -248,14 +254,26 @@ transform = Transform3D(0.05, 0, 0, 0, -2.1855695e-09, 0.05, 0, -0.05, -2.185569
 [node name="Hall2Light1" type="OmniLight3D" parent="Hall2"]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 15.688, 49.561, 178.937)
 light_color = Color(1.353256, 0.8193202, 0.5575868, 1)
-light_energy = 15.0
+light_energy = 5.0
 omni_range = 200.0
 
 [node name="Hall2Light2" type="OmniLight3D" parent="Hall2"]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 15.688, 49.561, -198.919)
 light_color = Color(1.353256, 0.8193202, 0.5575868, 1)
-light_energy = 15.0
+light_energy = 5.0
 omni_range = 200.0
+
+[node name="Hall2SpotLight1" type="SpotLight3D" parent="Hall2"]
+transform = Transform3D(-4.371139e-08, 1, 4.371139e-08, 0, -4.371139e-08, 1, 1, 4.371139e-08, 1.9106855e-15, 15.688, 49.561, 178.937)
+light_color = Color(1.353, 0.819, 0.558, 1)
+light_energy = 15.0
+spot_range = 130.264
+
+[node name="Hall2SpotLight2" type="SpotLight3D" parent="Hall2"]
+transform = Transform3D(-4.371139e-08, 1, 4.371139e-08, 0, -4.371139e-08, 1, 1, 4.371139e-08, 1.9106855e-15, 15.688, 49.561, -198.919)
+light_color = Color(1.353, 0.819, 0.558, 1)
+light_energy = 15.0
+spot_range = 130.264
 
 [node name="floorPlane" type="CSGBox3D" parent="."]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -697.73987, -0.5, 350.00003)
