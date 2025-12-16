@@ -1,7 +1,86 @@
-[gd_scene load_steps=2 format=3 uid="uid://bnsrguh200nd6"]
+[gd_scene load_steps=3 format=3 uid="uid://bnsrguh200nd6"]
 
 [ext_resource type="Script" uid="uid://q0lapoklnbk3" path="res://Scripts/LevelScripts/navigationLevel.gd" id="1_uhgln"]
 
+[sub_resource type="NavigationMesh" id="NavigationMesh_uhgln"]
+
 [node name="Level1" type="NavigationRegion3D"]
+navigation_mesh = SubResource("NavigationMesh_uhgln")
 script = ExtResource("1_uhgln")
 metadata/_custom_type_script = "uid://q0lapoklnbk3"
+
+[node name="Starting room" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 50, -354.707)
+size = Vector3(210, 110, 110)
+
+[node name="Empty" type="CSGBox3D" parent="Starting room"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.012611389)
+operation = 2
+size = Vector3(200, 100, 100)
+
+[node name="EmptyDoor" type="CSGBox3D" parent="Starting room"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 53.393505)
+operation = 2
+size = Vector3(110, 100, 20)
+
+[node name="Room1" type="CSGBox3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 448.811, 100, 382.174)
+size = Vector3(420, 220, 330)
+
+[node name="Empty" type="CSGBox3D" parent="Room1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.012611389)
+operation = 2
+size = Vector3(400, 200, 300)
+
+[node name="EmptyDoor" type="CSGBox3D" parent="Room1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.69447, -50, 159.962)
+operation = 2
+size = Vector3(110, 100, 20)
+
+[node name="Room2" type="CSGBox3D" parent="."]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1071.533, 100, 1209.3563)
+size = Vector3(420, 220, 330)
+
+[node name="Empty" type="CSGBox3D" parent="Room2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.012611389)
+operation = 2
+size = Vector3(400, 200, 300)
+
+[node name="EmptyDoor" type="CSGBox3D" parent="Room2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.69447, -50, 159.962)
+operation = 2
+size = Vector3(110, 100, 20)
+
+[node name="Hall2" type="CSGBox3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 50, 349.743)
+use_collision = true
+size = Vector3(110, 110, 600)
+
+[node name="Hallspace2" type="CSGBox3D" parent="Hall2"]
+operation = 2
+use_collision = true
+size = Vector3(100, 100, 600)
+
+[node name="door" type="CSGBox3D" parent="Hall2"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 55.273766, 0, 8.841232e-07)
+operation = 2
+use_collision = true
+size = Vector3(100, 100, 20.16)
+
+[node name="Hall" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 50, 0)
+use_collision = true
+size = Vector3(110, 110, 600)
+
+[node name="Hallspace" type="CSGBox3D" parent="Hall"]
+operation = 2
+use_collision = true
+size = Vector3(100, 100, 600)
+
+[node name="floorPlane" type="CSGBox3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -697.73987, -0.5, 350)
+size = Vector3(110, 1, 800)
+
+[node name="floorPlane2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1040.8745, -0.5, 875.37695)
+size = Vector3(110, 1, 800)
