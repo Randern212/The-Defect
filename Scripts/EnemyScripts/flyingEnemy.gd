@@ -14,6 +14,7 @@ var direction:Vector3=Vector3.ZERO
 var canShoot:bool=true
 var bulletInstance:Projectile
 var shootingPosition:Vector3=Vector3(6.582,10.956,0)
+var hp:int=2
 
 @export var shieldActive:bool=true
 @export var bullet:PackedScene
@@ -61,6 +62,8 @@ func selfGotHit(dmg,source:Node)->void:
 		shieldActive=false
 		shield.visible=false
 	else:
-		print("TookDmg")
+		hp-=1
+		if hp==0:
+			self.queue_free()
 	if source.has_method("pool"):
 		source.pool()

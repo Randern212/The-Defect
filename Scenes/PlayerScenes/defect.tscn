@@ -18,7 +18,7 @@ radius = 5.0
 height = 31.628
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_bxa8c"]
-radius = 15.0
+radius = 25.0
 
 [node name="Defect" type="CharacterBody3D"]
 script = ExtResource("1_qv6fe")

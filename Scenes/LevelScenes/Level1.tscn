@@ -45,6 +45,8 @@ environment = SubResource("Environment_abrkr")
 [node name="Starting room" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 50, -354.707)
 use_collision = true
+collision_layer = 3
+collision_mask = 3
 size = Vector3(210, 110, 110)
 material = ExtResource("2_8wdus")
 
@@ -81,6 +83,8 @@ omni_range = 200.0
 [node name="Room1" type="CSGBox3D" parent="."]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 448.811, 100, 382.17398)
 use_collision = true
+collision_layer = 3
+collision_mask = 3
 size = Vector3(420, 220, 330)
 material = ExtResource("2_8wdus")
 
@@ -135,6 +139,8 @@ omni_range = 350.0
 [node name="Room2" type="CSGBox3D" parent="."]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1071.533, 100, 1209.3563)
 use_collision = true
+collision_layer = 3
+collision_mask = 3
 size = Vector3(420, 220, 330)
 material = ExtResource("2_8wdus")
 
@@ -183,6 +189,8 @@ omni_range = 200.0
 [node name="Hall" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 50, 0)
 use_collision = true
+collision_layer = 3
+collision_mask = 3
 size = Vector3(110, 110, 600)
 material = ExtResource("2_8wdus")
 
@@ -210,6 +218,8 @@ omni_range = 200.0
 [node name="Hall2" type="CSGBox3D" parent="."]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 50, 349.743)
 use_collision = true
+collision_layer = 3
+collision_mask = 3
 size = Vector3(110, 110, 600)
 material = ExtResource("2_8wdus")
 
@@ -250,12 +260,16 @@ omni_range = 200.0
 [node name="floorPlane" type="CSGBox3D" parent="."]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -697.73987, -0.5, 350.00003)
 use_collision = true
+collision_layer = 3
+collision_mask = 3
 size = Vector3(110, 1, 800)
 material = ExtResource("3_jonig")
 
 [node name="floorPlane2" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1040.8745, -0.5, 705.6979)
 use_collision = true
+collision_layer = 3
+collision_mask = 3
 size = Vector3(110, 1, 500)
 material = ExtResource("3_jonig")
 
@@ -304,7 +318,7 @@ ID = 4
 
 [node name="FlyingEnemy5" parent="." instance=ExtResource("10_t3wjw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1037.7277, 13.690212, 352.39114)
-ID = 2
+ID = 5
 
 [node name="FlyingEnemy6" parent="." instance=ExtResource("10_t3wjw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1037.7277, 30.754623, 902.5843)
@@ -320,7 +334,7 @@ ID = 3
 
 [node name="playerDetector3" parent="." instance=ExtResource("9_8ogec")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -271.11496, 51.947144, 366.9593)
-ID = 2
+ID = 5
 
 [node name="playerDetector2" parent="." instance=ExtResource("9_8ogec")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 223.89842, 51.947144, 351.17175)

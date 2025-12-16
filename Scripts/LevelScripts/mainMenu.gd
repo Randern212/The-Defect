@@ -10,7 +10,8 @@ func _ready() -> void:
 	quit.pressed.connect(quitGame)
 
 func startGame()->void:
-	get_tree().change_scene_to_file(Constants.sceneDictionary[Constants.Scenes.NAVIGATIONDEMO])
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	get_tree().change_scene_to_file(Constants.sceneDictionary[Constants.Scenes.LEVEL1])
 
 func showControls()->void:
 	get_tree().change_scene_to_file(Constants.sceneDictionary[Constants.Scenes.CONTROLS])
