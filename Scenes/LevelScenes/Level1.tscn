@@ -69,6 +69,12 @@ transform = Transform3D(-4.371139e-07, 0, -10, 0, 10, 0, 10, 0, -4.371139e-07, -
 [node name="StartingRoomLamp" parent="Starting room" instance=ExtResource("5_wttbp")]
 transform = Transform3D(-0.05, 0, -4.371139e-09, 0, 0.05, 0, 4.371139e-09, 0, -0.05, -4.313138e-06, 36.21656, -49.336548)
 
+[node name="StartingRoomLight" type="OmniLight3D" parent="Starting room"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 36.217, -49.337)
+light_color = Color(1.353256, 0.8193202, 0.5575868, 1)
+light_energy = 15.0
+omni_range = 80.0
+
 [node name="Room1" type="CSGBox3D" parent="."]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 448.811, 100, 382.17398)
 use_collision = true
@@ -90,20 +96,38 @@ material = ExtResource("2_8wdus")
 [node name="Room1Camera2" parent="Room1" instance=ExtResource("5_lwqvg")]
 transform = Transform3D(-10, 0, 8.742278e-07, 0, 10, 0, -8.742278e-07, 0, -10, 7.7161384, 44.484024, -140.00253)
 
-[node name="StartingRoomPipes1" parent="Room1" instance=ExtResource("4_wtj2j")]
+[node name="Room1Pipes1" parent="Room1" instance=ExtResource("4_wtj2j")]
 transform = Transform3D(-2.6226833e-06, 0, 60, 0, 60, 0, -60, 0, -2.6226833e-06, -176.7545, -40.318512, -59.87824)
 
-[node name="StartingRoomPipes2" parent="Room1" instance=ExtResource("4_wtj2j")]
+[node name="Room1Pipes2" parent="Room1" instance=ExtResource("4_wtj2j")]
 transform = Transform3D(-20, 1.7484556e-06, 0, -1.7484556e-06, -20, 0, 0, 0, 20, 163.39102, 80.31884, -142.2509)
 
-[node name="StartingRoomLamp2" parent="Room1" instance=ExtResource("5_wttbp")]
+[node name="Room1Lamp1" parent="Room1" instance=ExtResource("5_wttbp")]
 transform = Transform3D(-0.05, 0, -4.371139e-09, 0, 0.05, 0, 4.371139e-09, 0, -0.05, -28.281143, 68.07233, -149.53406)
 
-[node name="StartingRoomLamp3" parent="Room1" instance=ExtResource("5_wttbp")]
+[node name="Room1Lamp2" parent="Room1" instance=ExtResource("5_wttbp")]
 transform = Transform3D(-2.1855695e-09, 0, -0.05, 0, 0.05, 0, 0.05, 0, -2.1855695e-09, -199.53432, 68.07233, -23.741379)
 
-[node name="StartingRoomLamp4" parent="Room1" instance=ExtResource("5_wttbp")]
+[node name="Room1Lamp3" parent="Room1" instance=ExtResource("5_wttbp")]
 transform = Transform3D(-2.1855695e-09, 0, 0.05, 0, 0.05, 0, -0.05, 0, -2.1855695e-09, 199.54044, 68.07233, -23.741386)
+
+[node name="Room1Light1" type="OmniLight3D" parent="Room1"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -28.281, 68.072, -149.534)
+light_color = Color(1.353256, 0.8193202, 0.5575868, 1)
+light_energy = 15.0
+omni_range = 80.0
+
+[node name="Room1Light2" type="OmniLight3D" parent="Room1"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -199.534, 68.072, -23.741)
+light_color = Color(1.353256, 0.8193202, 0.5575868, 1)
+light_energy = 15.0
+omni_range = 80.0
+
+[node name="Room1Light3" type="OmniLight3D" parent="Room1"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 199.54, 68.072, -23.741)
+light_color = Color(1.353256, 0.8193202, 0.5575868, 1)
+light_energy = 15.0
+omni_range = 80.0
 
 [node name="Room2" type="CSGBox3D" parent="."]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1071.533, 100, 1209.3563)
@@ -123,23 +147,35 @@ operation = 2
 size = Vector3(110, 100, 20)
 material = ExtResource("2_8wdus")
 
-[node name="StartingRoomPipes1" parent="Room2" instance=ExtResource("4_wtj2j")]
+[node name="Room2Pipes1" parent="Room2" instance=ExtResource("4_wtj2j")]
 transform = Transform3D(60, 0, 0, 0, 60, 0, 0, 0, 60, 143.87097, -40.75323, -126.54205)
 
-[node name="StartingRoomPipes2" parent="Room2" instance=ExtResource("4_wtj2j")]
+[node name="Room2Pipes2" parent="Room2" instance=ExtResource("4_wtj2j")]
 transform = Transform3D(-1.509958e-06, 2.2799734e-13, 20, -3.019916e-06, -20, 0, 20, -3.019916e-06, 1.509958e-06, -192.50232, 80.45488, -131.4699)
 
-[node name="StartingRoomPipes3" parent="Room2" instance=ExtResource("4_wtj2j")]
+[node name="Room2Pipes3" parent="Room2" instance=ExtResource("4_wtj2j")]
 transform = Transform3D(7.642741e-14, -1.7484556e-06, 40, -40, -1.7484556e-06, -6.7762636e-21, 1.7484556e-06, -40, -1.7484556e-06, -184.86592, 35.014473, 110.16365)
 
-[node name="StartingRoomLamp1" parent="Room2" instance=ExtResource("5_wttbp")]
+[node name="Room2Lamp1" parent="Room2" instance=ExtResource("5_wttbp")]
 transform = Transform3D(-2.1855695e-09, 0, 0.05, 0, 0.05, 0, -0.05, 0, -2.1855695e-09, 199.55457, 60.728027, -72.70699)
 
-[node name="StartingRoomLamp2" parent="Room2" instance=ExtResource("5_wttbp")]
+[node name="Room2Lamp2" parent="Room2" instance=ExtResource("5_wttbp")]
 transform = Transform3D(-0.05, 0, -4.371139e-09, 0, 0.05, 0, 4.371139e-09, 0, -0.05, -122.23122, 56.55014, -149.55394)
 
 [node name="Room2Camera2" parent="Room2" instance=ExtResource("5_lwqvg")]
 transform = Transform3D(-10, 0, -8.742278e-07, 0, 10, 0, 8.742278e-07, 0, -10, -13.377011, 44.484024, -140.14021)
+
+[node name="Room2Light1" type="OmniLight3D" parent="Room2"]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 199.555, 60.728, -72.707)
+light_color = Color(1.353256, 0.8193202, 0.5575868, 1)
+light_energy = 15.0
+omni_range = 80.0
+
+[node name="Room2Light2" type="OmniLight3D" parent="Room2"]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -122.231, 56.55, -149.554)
+light_color = Color(1.353256, 0.8193202, 0.5575868, 1)
+light_energy = 15.0
+omni_range = 80.0
 
 [node name="Hall" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 50, 0)
