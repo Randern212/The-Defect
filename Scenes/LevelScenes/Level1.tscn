@@ -1,8 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://bnsrguh200nd6"]
+[gd_scene load_steps=12 format=3 uid="uid://bnsrguh200nd6"]
 
 [ext_resource type="Script" uid="uid://q0lapoklnbk3" path="res://Scripts/LevelScripts/navigationLevel.gd" id="1_uhgln"]
 [ext_resource type="Material" uid="uid://dvinoiofesdxa" path="res://Assets/LevelAssets/wall Materials.tres" id="2_8wdus"]
 [ext_resource type="Material" uid="uid://vev1sjyumcsm" path="res://Assets/LevelAssets/planes Materials.tres" id="3_jonig"]
+[ext_resource type="PackedScene" uid="uid://d8n143sfng2e" path="res://Assets/LevelAssets/industrial_pipes.glb" id="4_wtj2j"]
+[ext_resource type="PackedScene" uid="uid://bs7jky0t2g44s" path="res://Assets/LevelAssets/camera1.glb" id="5_lwqvg"]
+[ext_resource type="PackedScene" uid="uid://b4wrfxd3m7ijo" path="res://Assets/LevelAssets/lamp.glb" id="5_wttbp"]
+[ext_resource type="PackedScene" uid="uid://bcwh4vpux6jiu" path="res://Assets/LevelAssets/signal tower.glb" id="7_b25ti"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_uhgln"]
 vertices = PackedVector3Array(-51.53296, 120, -299.707, 48.46704, 120, -299.707, 98.46704, 120, -309.707, 98.46704, 120, -399.707, -101.53296, 120, -399.707, -101.53296, 120, -309.707, -51.53296, 120, 210.293, 48.46704, 120, 210.293, -31.532959, 20, -309.707, 38.46704, 20, -309.707, 88.46704, 20, -319.707, 88.46704, 20, -389.707, -81.53296, 20, -389.707, -81.53296, 20, -319.707, 38.46704, 20, 300.293, -31.532959, 20, 300.293, -31.532959, 20, 380.293, 238.46704, 20, 380.293, 238.46704, 20, 310.293, 288.46704, 230, 180.293, 288.46704, 230, 590.29297, 608.46704, 230, 590.29297, 608.46704, 230, 180.293, 58.46704, 120, 300.293, -61.53296, 120, 300.293, -291.53296, 120, 400.293, 268.46704, 120, 400.293, 268.46704, 120, 300.293, -291.53296, 120, 300.293, 318.46704, 20, 390.293, 318.46704, 20, 300.293, 588.46704, 20, 570.29297, 588.46704, 20, 200.293, 318.46704, 20, 200.293, 318.46704, 20, 570.29297, -301.53296, 20, 380.293, -1091.533, 20, 300.293, -1091.533, 20, 400.293, -311.53296, 20, 400.293, -1091.533, 20, 460.293, -1091.533, 20, 950.29297, -991.53296, 20, 950.29297, -991.53296, 20, 460.293, -1271.533, 230, 1050.293, -1271.533, 230, 1360.293, -871.53296, 230, 1360.293, -871.53296, 230, 1050.293, -881.53296, 20, 1070.293, -1081.533, 20, 1050.293, -1091.533, 20, 1070.293, -1251.533, 20, 1070.293, -1251.533, 20, 1340.293, -881.53296, 20, 1340.293)
@@ -12,10 +16,28 @@ cell_size = 10.0
 cell_height = 10.0
 border_size = 10.0
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kw2r0"]
+sky_top_color = Color(0.94419324, 0.22747475, 1.5594364e-05, 1)
+sky_horizon_color = Color(0.53900445, 0.3598147, 0.3029408, 1)
+ground_bottom_color = Color(0.00014731457, 0.000107040534, 7.03984e-05, 1)
+ground_horizon_color = Color(0.53900445, 0.3598147, 0.3029408, 1)
+
+[sub_resource type="Sky" id="Sky_8ogec"]
+sky_material = SubResource("ProceduralSkyMaterial_kw2r0")
+
+[sub_resource type="Environment" id="Environment_t3wjw"]
+background_mode = 2
+sky = SubResource("Sky_8ogec")
+tonemap_mode = 2
+glow_enabled = true
+
 [node name="Level1" type="NavigationRegion3D"]
 navigation_mesh = SubResource("NavigationMesh_uhgln")
 script = ExtResource("1_uhgln")
 metadata/_custom_type_script = "uid://q0lapoklnbk3"
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_t3wjw")
 
 [node name="Starting room" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 50, -354.707)
@@ -34,6 +56,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 53.393505)
 operation = 2
 size = Vector3(110, 100, 20)
 material = ExtResource("2_8wdus")
+
+[node name="StartingRoomPipes1" parent="Starting room" instance=ExtResource("4_wtj2j")]
+transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 69.72489, -20.842327, -38.382446)
+
+[node name="StartingRoomPipes2" parent="Starting room" instance=ExtResource("4_wtj2j")]
+transform = Transform3D(6.556708e-07, 15, -1.3113416e-06, 15, -6.556708e-07, 0, -5.732056e-14, -1.3113416e-06, -15, -84.957184, 35.950256, 44.084686)
+
+[node name="StartingRoomCamera" parent="Starting room" instance=ExtResource("5_lwqvg")]
+transform = Transform3D(-4.371139e-07, 0, -10, 0, 10, 0, 10, 0, -4.371139e-07, -90.018684, 37.59823, -30.145935)
+
+[node name="Sketchfab_Scene" parent="Starting room" instance=ExtResource("5_wttbp")]
+transform = Transform3D(-0.05, 0, -4.371139e-09, 0, 0.05, 0, 4.371139e-09, 0, -0.05, -4.313138e-06, 36.21656, -49.336548)
 
 [node name="Room1" type="CSGBox3D" parent="."]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 448.811, 100, 382.17398)
@@ -113,3 +147,27 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1040.8745, -0.5, 705.6979)
 use_collision = true
 size = Vector3(110, 1, 500)
 material = ExtResource("3_jonig")
+
+[node name="SignalTower1" parent="." instance=ExtResource("7_b25ti")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -621.0514, -900.4098, 1030.9375)
+
+[node name="SignalTower8" parent="." instance=ExtResource("7_b25ti")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -621.0514, -280.83673, 2872.2705)
+
+[node name="SignalTower7" parent="." instance=ExtResource("7_b25ti")]
+transform = Transform3D(1, 0, 0, 0, 3, 0, 0, 0, 1, -2725.421, -1938.6997, 1030.9375)
+
+[node name="SignalTower4" parent="." instance=ExtResource("7_b25ti")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 429.18408, -2548.8828, 2979.0237)
+
+[node name="SignalTower3" parent="." instance=ExtResource("7_b25ti")]
+transform = Transform3D(3, 0, 0, 0, 1, 0, 0, 0, 3, -3005.1973, -900.4098, -37.211243)
+
+[node name="SignalTower2" parent="." instance=ExtResource("7_b25ti")]
+transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, -1516.3164, -1249.3395, -1008.7279)
+
+[node name="SignalTower5" parent="." instance=ExtResource("7_b25ti")]
+transform = Transform3D(0.5, 0, 0, 0, 1, 0, 0, 0, 0.5, -615.9727, -1062.707, -939.33813)
+
+[node name="SignalTower6" parent="." instance=ExtResource("7_b25ti")]
+transform = Transform3D(0.5, 0, 0, 0, 1, 0, 0, 0, 0.5, 324.64124, -472.7066, -1131.55)
