@@ -12,4 +12,5 @@ func _ready() -> void:
 			enemies.push_back(child)
 	for detector in detectors:
 		for enemy in enemies:
-			detector.playerDetected.connect(enemy.setTarget)
+			if detector.ID==enemy.ID:
+				detector.playerDetected.connect(enemy.setTarget)

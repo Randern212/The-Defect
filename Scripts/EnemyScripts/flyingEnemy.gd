@@ -19,6 +19,7 @@ var shootingPosition:Vector3=Vector3(6.582,10.956,0)
 @export var bullet:PackedScene
 @export var range:float=100
 @export var speed:float=100
+@export var ID:int=-1
 
 func _ready() -> void:
 	stateMachine.init(self,Constants.enemyStates.IDLE)
