@@ -1,8 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://bnsrguh200nd6"]
+[gd_scene load_steps=5 format=3 uid="uid://bnsrguh200nd6"]
 
 [ext_resource type="Script" uid="uid://q0lapoklnbk3" path="res://Scripts/LevelScripts/navigationLevel.gd" id="1_uhgln"]
+[ext_resource type="Material" uid="uid://dvinoiofesdxa" path="res://Assets/LevelAssets/wall Materials.tres" id="2_8wdus"]
+[ext_resource type="Material" uid="uid://vev1sjyumcsm" path="res://Assets/LevelAssets/planes Materials.tres" id="3_jonig"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_uhgln"]
+vertices = PackedVector3Array(-51.53296, 120, -299.707, 48.46704, 120, -299.707, 98.46704, 120, -309.707, 98.46704, 120, -399.707, -101.53296, 120, -399.707, -101.53296, 120, -309.707, -51.53296, 120, 210.293, 48.46704, 120, 210.293, -31.532959, 20, -309.707, 38.46704, 20, -309.707, 88.46704, 20, -319.707, 88.46704, 20, -389.707, -81.53296, 20, -389.707, -81.53296, 20, -319.707, 38.46704, 20, 300.293, -31.532959, 20, 300.293, -31.532959, 20, 380.293, 238.46704, 20, 380.293, 238.46704, 20, 310.293, 288.46704, 230, 180.293, 288.46704, 230, 590.29297, 608.46704, 230, 590.29297, 608.46704, 230, 180.293, 58.46704, 120, 300.293, -61.53296, 120, 300.293, -291.53296, 120, 400.293, 268.46704, 120, 400.293, 268.46704, 120, 300.293, -291.53296, 120, 300.293, 318.46704, 20, 390.293, 318.46704, 20, 300.293, 588.46704, 20, 570.29297, 588.46704, 20, 200.293, 318.46704, 20, 200.293, 318.46704, 20, 570.29297, -301.53296, 20, 380.293, -1091.533, 20, 300.293, -1091.533, 20, 400.293, -311.53296, 20, 400.293, -1091.533, 20, 460.293, -1091.533, 20, 950.29297, -991.53296, 20, 950.29297, -991.53296, 20, 460.293, -1271.533, 230, 1050.293, -1271.533, 230, 1360.293, -871.53296, 230, 1360.293, -871.53296, 230, 1050.293, -881.53296, 20, 1070.293, -1081.533, 20, 1050.293, -1091.533, 20, 1070.293, -1251.533, 20, 1070.293, -1251.533, 20, 1340.293, -881.53296, 20, 1340.293)
+polygons = [PackedInt32Array(5, 4, 0), PackedInt32Array(0, 4, 1), PackedInt32Array(1, 4, 2), PackedInt32Array(2, 4, 3), PackedInt32Array(0, 1, 6), PackedInt32Array(6, 1, 7), PackedInt32Array(13, 12, 8), PackedInt32Array(8, 12, 9), PackedInt32Array(9, 12, 10), PackedInt32Array(10, 12, 11), PackedInt32Array(15, 14, 16), PackedInt32Array(16, 14, 18), PackedInt32Array(16, 18, 17), PackedInt32Array(8, 9, 15), PackedInt32Array(15, 9, 14), PackedInt32Array(22, 21, 19), PackedInt32Array(19, 21, 20), PackedInt32Array(7, 23, 6), PackedInt32Array(6, 23, 24), PackedInt32Array(23, 26, 24), PackedInt32Array(24, 26, 25), PackedInt32Array(23, 27, 26), PackedInt32Array(25, 28, 24), PackedInt32Array(18, 30, 17), PackedInt32Array(17, 30, 29), PackedInt32Array(30, 32, 29), PackedInt32Array(29, 32, 31), PackedInt32Array(30, 33, 32), PackedInt32Array(31, 34, 29), PackedInt32Array(16, 35, 15), PackedInt32Array(15, 35, 36), PackedInt32Array(38, 37, 35), PackedInt32Array(35, 37, 36), PackedInt32Array(42, 41, 39), PackedInt32Array(39, 41, 40), PackedInt32Array(46, 45, 43), PackedInt32Array(43, 45, 44), PackedInt32Array(47, 49, 48), PackedInt32Array(51, 50, 49), PackedInt32Array(47, 52, 49), PackedInt32Array(49, 52, 51)]
+geometry_parsed_geometry_type = 1
+cell_size = 10.0
+cell_height = 10.0
+border_size = 10.0
 
 [node name="Level1" type="NavigationRegion3D"]
 navigation_mesh = SubResource("NavigationMesh_uhgln")
@@ -11,76 +19,97 @@ metadata/_custom_type_script = "uid://q0lapoklnbk3"
 
 [node name="Starting room" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 50, -354.707)
+use_collision = true
 size = Vector3(210, 110, 110)
+material = ExtResource("2_8wdus")
 
 [node name="Empty" type="CSGBox3D" parent="Starting room"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.012611389)
 operation = 2
 size = Vector3(200, 100, 100)
+material = ExtResource("2_8wdus")
 
 [node name="EmptyDoor" type="CSGBox3D" parent="Starting room"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 53.393505)
 operation = 2
 size = Vector3(110, 100, 20)
+material = ExtResource("2_8wdus")
 
 [node name="Room1" type="CSGBox3D" parent="."]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 448.811, 100, 382.174)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 448.811, 100, 382.17398)
+use_collision = true
 size = Vector3(420, 220, 330)
+material = ExtResource("2_8wdus")
 
 [node name="Empty" type="CSGBox3D" parent="Room1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.012611389)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.013)
 operation = 2
 size = Vector3(400, 200, 300)
+material = ExtResource("2_8wdus")
 
 [node name="EmptyDoor" type="CSGBox3D" parent="Room1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.69447, -50, 159.962)
 operation = 2
 size = Vector3(110, 100, 20)
+material = ExtResource("2_8wdus")
 
 [node name="Room2" type="CSGBox3D" parent="."]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1071.533, 100, 1209.3563)
+use_collision = true
 size = Vector3(420, 220, 330)
+material = ExtResource("2_8wdus")
 
 [node name="Empty" type="CSGBox3D" parent="Room2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.012611389)
 operation = 2
 size = Vector3(400, 200, 300)
+material = ExtResource("2_8wdus")
 
 [node name="EmptyDoor" type="CSGBox3D" parent="Room2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.69447, -50, 159.962)
 operation = 2
 size = Vector3(110, 100, 20)
+material = ExtResource("2_8wdus")
+
+[node name="Hall" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 50, 0)
+use_collision = true
+size = Vector3(110, 110, 600)
+material = ExtResource("2_8wdus")
+
+[node name="Hallspace" type="CSGBox3D" parent="Hall"]
+operation = 2
+use_collision = true
+size = Vector3(100, 100, 600)
+material = ExtResource("2_8wdus")
 
 [node name="Hall2" type="CSGBox3D" parent="."]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 50, 349.743)
 use_collision = true
 size = Vector3(110, 110, 600)
+material = ExtResource("2_8wdus")
 
 [node name="Hallspace2" type="CSGBox3D" parent="Hall2"]
 operation = 2
 use_collision = true
 size = Vector3(100, 100, 600)
+material = ExtResource("2_8wdus")
 
 [node name="door" type="CSGBox3D" parent="Hall2"]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 55.273766, 0, 8.841232e-07)
 operation = 2
 use_collision = true
 size = Vector3(100, 100, 20.16)
-
-[node name="Hall" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 50, 0)
-use_collision = true
-size = Vector3(110, 110, 600)
-
-[node name="Hallspace" type="CSGBox3D" parent="Hall"]
-operation = 2
-use_collision = true
-size = Vector3(100, 100, 600)
+material = ExtResource("2_8wdus")
 
 [node name="floorPlane" type="CSGBox3D" parent="."]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -697.73987, -0.5, 350)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -697.73987, -0.5, 350.00003)
+use_collision = true
 size = Vector3(110, 1, 800)
+material = ExtResource("3_jonig")
 
 [node name="floorPlane2" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1040.8745, -0.5, 875.37695)
-size = Vector3(110, 1, 800)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1040.8745, -0.5, 705.6979)
+use_collision = true
+size = Vector3(110, 1, 500)
+material = ExtResource("3_jonig")

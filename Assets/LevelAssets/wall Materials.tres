@@ -1,0 +1,6 @@
+[gd_resource type="ORMMaterial3D" load_steps=2 format=3 uid="uid://dvinoiofesdxa"]
+
+[ext_resource type="Texture2D" uid="uid://cl28bh2oo8637" path="res://Assets/LevelAssets/wallTexture.jpg" id="1_4ipkc"]
+
+[resource]
+albedo_texture = ExtResource("1_4ipkc")
