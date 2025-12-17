@@ -48,7 +48,7 @@ offset_left = 566.0
 offset_top = 918.0
 offset_right = 3541.0
 offset_bottom = 1301.0
-text = "Defeect Eliminated"
+text = "Defect Eliminated"
 label_settings = SubResource("LabelSettings_kaksy")
 
 [node name="ResetTip" type="Label" parent="DeathScreen"]

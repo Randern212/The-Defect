@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bnsrguh200nd6"]
+[gd_scene load_steps=16 format=3 uid="uid://bnsrguh200nd6"]
 
 [ext_resource type="Script" uid="uid://q0lapoklnbk3" path="res://Scripts/LevelScripts/navigationLevel.gd" id="1_uhgln"]
 [ext_resource type="Material" uid="uid://dvinoiofesdxa" path="res://Assets/LevelAssets/wall Materials.tres" id="2_8wdus"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://d0kbqvcp33oyg" path="res://Scenes/PlayerScenes/defect.tscn" id="8_kw2r0"]
 [ext_resource type="PackedScene" uid="uid://t8wjet555817" path="res://Scenes/LevelScenes/player_detector.tscn" id="9_8ogec"]
 [ext_resource type="PackedScene" uid="uid://fdwmtjxslh6e" path="res://Scenes/EnemyScenes/flyingEnemy.tscn" id="10_t3wjw"]
+[ext_resource type="PackedScene" uid="uid://dl4xnk6sgr7ei" path="res://Scenes/LevelScenes/killBox.tscn" id="11_s4nsl"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_uhgln"]
 vertices = PackedVector3Array(-51.53296, 120, -299.707, 48.46704, 120, -299.707, 98.46704, 120, -309.707, 98.46704, 120, -399.707, -101.53296, 120, -399.707, -101.53296, 120, -309.707, -51.53296, 120, 210.293, 48.46704, 120, 210.293, -31.532959, 20, -309.707, 38.46704, 20, -309.707, 88.46704, 20, -319.707, 88.46704, 20, -389.707, -81.53296, 20, -389.707, -81.53296, 20, -319.707, 38.46704, 20, 300.293, -31.532959, 20, 300.293, -31.532959, 20, 380.293, 238.46704, 20, 380.293, 238.46704, 20, 310.293, 288.46704, 230, 180.293, 288.46704, 230, 590.29297, 608.46704, 230, 590.29297, 608.46704, 230, 180.293, 58.46704, 120, 300.293, -61.53296, 120, 300.293, -291.53296, 120, 400.293, 268.46704, 120, 400.293, 268.46704, 120, 300.293, -291.53296, 120, 300.293, 318.46704, 20, 390.293, 318.46704, 20, 300.293, 588.46704, 20, 570.29297, 588.46704, 20, 200.293, 318.46704, 20, 200.293, 318.46704, 20, 570.29297, -301.53296, 20, 380.293, -1091.533, 20, 300.293, -1091.533, 20, 400.293, -311.53296, 20, 400.293, -1091.533, 20, 460.293, -1091.533, 20, 950.29297, -991.53296, 20, 950.29297, -991.53296, 20, 460.293, -1271.533, 230, 1050.293, -1271.533, 230, 1360.293, -871.53296, 230, 1360.293, -871.53296, 230, 1050.293, -881.53296, 20, 1070.293, -1081.533, 20, 1050.293, -1091.533, 20, 1070.293, -1251.533, 20, 1070.293, -1251.533, 20, 1340.293, -881.53296, 20, 1340.293)
@@ -392,3 +393,6 @@ ID = 1
 [node name="playerDetector5" parent="." instance=ExtResource("9_8ogec")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1036.9818, 27.712173, 1049.8746)
 ID = 4
+
+[node name="KillBox" parent="." instance=ExtResource("11_s4nsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -693.2114, -150, 543.24915)

@@ -67,6 +67,7 @@ func seppuku()->void:
 	self.visible=false
 	self.set_physics_process(false)
 	self.set_process_input(false)
+	hud.showMessage("Defect Eliminated")
 
 func levelWon()->void:
 	hud.showMessage("Escape Successful")

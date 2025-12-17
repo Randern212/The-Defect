@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dl4xnk6sgr7ei"]
+
+[ext_resource type="Script" uid="uid://evbkin2btbrc" path="res://Scripts/LevelScripts/killBox.gd" id="1_cfhs1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_73kg6"]
+size = Vector3(2000, 1, 20000)
+
+[node name="KillBox" type="Area3D"]
+script = ExtResource("1_cfhs1")
+
+[node name="Shape" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_73kg6")
+
+[connection signal="body_entered" from="." to="." method="killPlayer"]

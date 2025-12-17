@@ -19,11 +19,10 @@ func changeValue(value:float)->void:
 	var tween=create_tween()
 	tween.tween_property(hp,"value",hp.value+value,tweenDuration)
 	if hp.value<=hp.min_value:
-		showMessage("Defeect Eliminated")
+		playerDied.emit()
 
 func showMessage(message:String):
 	deathMessage.text=message
 	var deathTween=create_tween()
 	deathTween.tween_property(deathScreen,"modulate:a",1,1.5)
 	playerDead=true
-	playerDied.emit()
