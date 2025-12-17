@@ -8,6 +8,7 @@ func _ready() -> void:
 	start.pressed.connect(startGame)
 	controls.pressed.connect(showControls)
 	quit.pressed.connect(quitGame)
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 func startGame()->void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)

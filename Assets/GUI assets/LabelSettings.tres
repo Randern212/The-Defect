@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://bwvoem3qpk1p7"]
+
+[ext_resource type="FontFile" uid="uid://8r5wljv7iv6e" path="res://Assets/GUI assets/OptimusPrinceps.ttf" id="1_8eb3j"]
+
+[resource]
+font = ExtResource("1_8eb3j")
+font_size = 60
+outline_size = 14
+outline_color = Color(0, 0, 0, 1)

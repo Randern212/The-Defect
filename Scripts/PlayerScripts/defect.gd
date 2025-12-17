@@ -26,6 +26,7 @@ var canDash:bool=true
 
 func _ready()->void:
 	stateMachine.init(self,Constants.playerStates.FALL)
+	hud.playerDied.connect(seppuku)
 
 func _input(event: InputEvent) -> void:
 	camera.cameraMouseInput(event)
@@ -61,3 +62,8 @@ func selfGotHit(dmg:float,thing:Node3D)->void:
 		if thing.has_method("pool"):
 			thing.pool()
 		hud.changeValue(-dmg)
+
+func seppuku()->void:
+	self.visible=false
+	self.set_physics_process(false)
+	self.set_process_input(false)

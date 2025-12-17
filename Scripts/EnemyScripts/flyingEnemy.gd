@@ -13,7 +13,6 @@ var target:Defect=null
 var direction:Vector3=Vector3.ZERO
 var canShoot:bool=true
 var bulletInstance:Projectile
-var shootingPosition:Vector3=Vector3(6.582,10.956,0)
 var hp:int=20
 
 @export var shieldActive:bool=true
@@ -51,7 +50,7 @@ func cooldownOff()->void:
 	canShoot=true
 
 func shoot()->void:
-	bulletInstance.unpool(global_position + shootingPosition,global_position.direction_to(target.global_position))
+	bulletInstance.unpool(global_position,global_position.direction_to(target.global_position))
 	attackCooldown.start(1.0)
 
 func setTarget(body:Node3D)->void:

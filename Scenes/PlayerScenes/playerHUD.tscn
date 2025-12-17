@@ -1,8 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://cx6lyipmphetp"]
+[gd_scene load_steps=8 format=3 uid="uid://cx6lyipmphetp"]
 
 [ext_resource type="Texture2D" uid="uid://bgc8d0csm67vj" path="res://Assets/GUI assets/barEmpty.png" id="1_b7nny"]
 [ext_resource type="Script" uid="uid://c07303bxw2wg4" path="res://Scripts/PlayerScripts/playerHUD.gd" id="1_ya5tg"]
 [ext_resource type="Texture2D" uid="uid://c6qncbq7u7grc" path="res://Assets/GUI assets/fillGreen.png" id="2_ya5tg"]
+[ext_resource type="Texture2D" uid="uid://c4c8wh32uxec3" path="res://Assets/GUI assets/Defect menu.png" id="4_lniku"]
+[ext_resource type="FontFile" uid="uid://8r5wljv7iv6e" path="res://Assets/GUI assets/OptimusPrinceps.ttf" id="5_jlsgt"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_kaksy"]
+font = ExtResource("5_jlsgt")
+font_size = 360
+font_color = Color(18.892157, 18.892157, 18.892157, 1)
+outline_size = 14
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_jlsgt"]
+font = ExtResource("5_jlsgt")
+font_size = 95
+font_color = Color(18.892157, 18.892157, 18.892157, 1)
+outline_size = 14
+outline_color = Color(0, 0, 0, 1)
 
 [node name="playerHUD" type="Control"]
 layout_mode = 3
@@ -20,3 +36,26 @@ offset_bottom = 150.0
 value = 100.0
 texture_under = ExtResource("1_b7nny")
 texture_progress = ExtResource("2_ya5tg")
+
+[node name="DeathScreen" type="Sprite2D" parent="."]
+modulate = Color(0.42352942, 0.25882354, 0.22352941, 0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_lniku")
+centered = false
+
+[node name="DeathMessage" type="Label" parent="DeathScreen"]
+offset_left = 566.0
+offset_top = 918.0
+offset_right = 3541.0
+offset_bottom = 1301.0
+text = "Defeect Eliminated"
+label_settings = SubResource("LabelSettings_kaksy")
+
+[node name="ResetTip" type="Label" parent="DeathScreen"]
+offset_left = 1148.0
+offset_top = 1602.0
+offset_right = 2845.0
+offset_bottom = 1807.0
+text = "press Enter to return to the main menu
+"
+label_settings = SubResource("LabelSettings_jlsgt")

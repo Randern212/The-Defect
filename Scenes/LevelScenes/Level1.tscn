@@ -309,8 +309,35 @@ transform = Transform3D(3, 0, 0, 0, 1, 0, 0, 0, 3, -3005.1973, -900.4098, -37.21
 [node name="SignalTower2" parent="." instance=ExtResource("7_b25ti")]
 transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, -1516.3164, -1249.3395, -1008.7279)
 
+[node name="SignalTower13" parent="." instance=ExtResource("7_b25ti")]
+transform = Transform3D(-0.71251607, 0, 0.7016558, 0, 1, 0, -0.7016558, 0, -0.71251607, 672.53296, -900.4098, -506.90814)
+
+[node name="SignalTower14" parent="." instance=ExtResource("7_b25ti")]
+transform = Transform3D(-0.71251607, 0, 0.7016558, 0, 1, 0, -0.7016558, 0, -0.71251607, 1964.5149, -280.83673, -1818.8876)
+
+[node name="SignalTower15" parent="." instance=ExtResource("7_b25ti")]
+transform = Transform3D(-0.71251607, 0, 0.7016558, 0, 3, 0, -0.7016558, 0, -0.71251607, 2171.9302, -1938.6997, 969.635)
+
+[node name="SignalTower16" parent="." instance=ExtResource("7_b25ti")]
+transform = Transform3D(-2.1375482, 0, 2.1049674, 0, 1, 0, -2.1049674, 0, -2.1375482, 1621.8025, -900.4098, 1927.0146)
+
+[node name="SignalTower17" parent="." instance=ExtResource("7_b25ti")]
+transform = Transform3D(-0.71251607, 0, 0.7016558, 0, 2, 0, -0.7016558, 0, -0.71251607, -120.71924, -1249.3395, 1574.5542)
+
+[node name="SignalTower11" parent="." instance=ExtResource("7_b25ti")]
+transform = Transform3D(-0.2236414, 0, 0.9746715, 0, 1, 0, -0.9746715, 0, -0.2236414, -174.79114, -900.4098, -244.17096)
+
+[node name="SignalTower12" parent="." instance=ExtResource("7_b25ti")]
+transform = Transform3D(-0.2236414, 0, 0.9746715, 0, 2, 0, -0.9746715, 0, -0.2236414, -1962.5764, -1249.3395, 1084.572)
+
 [node name="SignalTower5" parent="." instance=ExtResource("7_b25ti")]
 transform = Transform3D(0.5, 0, 0, 0, 1, 0, 0, 0, 0.5, -615.9727, -1062.707, -939.33813)
+
+[node name="SignalTower9" parent="." instance=ExtResource("7_b25ti")]
+transform = Transform3D(-0.62946963, 0, 0.7770251, 0, 2, 0, -0.7770251, 0, -0.62946963, -809.7338, -1249.3395, 2332.537)
+
+[node name="SignalTower10" parent="." instance=ExtResource("7_b25ti")]
+transform = Transform3D(-0.31473482, 0, 0.38851255, 0, 1, 0, -0.38851255, 0, -0.31473482, -1322.5553, -1062.707, 1589.2687)
 
 [node name="SignalTower6" parent="." instance=ExtResource("7_b25ti")]
 transform = Transform3D(0.5, 0, 0, 0, 1, 0, 0, 0, 0.5, 324.64124, -472.7066, -1131.55)
