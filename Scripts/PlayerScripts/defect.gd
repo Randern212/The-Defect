@@ -67,3 +67,6 @@ func seppuku()->void:
 	self.visible=false
 	self.set_physics_process(false)
 	self.set_process_input(false)
+
+func levelWon()->void:
+	hud.showMessage("Escape Successful")

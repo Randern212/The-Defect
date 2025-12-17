@@ -21,6 +21,8 @@ var hp:int=20
 @export var speed:float=100
 @export var ID:int=-1
 
+signal died
+
 func _ready() -> void:
 	stateMachine.init(self,Constants.enemyStates.IDLE)
 	bulletInstance=bullet.instantiate()
@@ -63,6 +65,10 @@ func selfGotHit(dmg,source:Node)->void:
 	elif not shieldActive:
 		hp-=dmg
 		if hp<=0:
-			self.queue_free()
+			seppuku()
 	if source.has_method("pool"):
 		source.pool()
+
+func seppuku()->void:
+	died.emit()
+	self.queue_free()
