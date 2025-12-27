@@ -7,12 +7,12 @@
 [ext_resource type="Texture2D" uid="uid://bri55i14lb5ok" path="res://Assets/GUI assets/defect button pressed.png" id="4_x2lax"]
 [ext_resource type="Texture2D" uid="uid://t63kmd3373do" path="res://Assets/GUI assets/defect button plugged.png" id="5_eggvv"]
 
-[sub_resource type="Gradient" id="Gradient_aidow"]
+[sub_resource type="Gradient" id="Gradient_x2lax"]
 offsets = PackedFloat32Array(0, 0.97333336, 1)
 colors = PackedColorArray(0, 0, 0, 0.7254902, 0.69411767, 0.69411767, 0.69411767, 0.5529412, 1, 1, 1, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_dvn4e"]
-gradient = SubResource("Gradient_aidow")
+gradient = SubResource("Gradient_x2lax")
 width = 1920
 height = 1080
 fill_from = Vector2(1, 1)

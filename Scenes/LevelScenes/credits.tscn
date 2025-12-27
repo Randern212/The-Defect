@@ -1,0 +1,163 @@
+[gd_scene load_steps=14 format=3 uid="uid://5xhpg6qdjiu5"]
+
+[ext_resource type="Script" uid="uid://cgwt1nugudy31" path="res://Scripts/LevelScripts/controlsMenu.gd" id="1_eix0e"]
+[ext_resource type="Texture2D" uid="uid://c4c8wh32uxec3" path="res://Assets/GUI assets/Defect menu.png" id="1_fp7xi"]
+[ext_resource type="FontFile" uid="uid://8r5wljv7iv6e" path="res://Assets/GUI assets/OptimusPrinceps.ttf" id="2_eix0e"]
+[ext_resource type="Texture2D" uid="uid://d3gfp7cseqv2w" path="res://Assets/GUI assets/defect button unpluggedd.png" id="3_tn0f4"]
+[ext_resource type="Texture2D" uid="uid://bri55i14lb5ok" path="res://Assets/GUI assets/defect button pressed.png" id="4_3jatb"]
+[ext_resource type="Texture2D" uid="uid://t63kmd3373do" path="res://Assets/GUI assets/defect button plugged.png" id="5_d7un4"]
+
+[sub_resource type="Gradient" id="Gradient_x2lax"]
+offsets = PackedFloat32Array(0, 0.013333334, 1)
+colors = PackedColorArray(0, 0, 0, 0.7254902, 0.69411767, 0.69411767, 0.69411767, 0.5529412, 0.7413945, 0.1463747, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_eix0e"]
+gradient = SubResource("Gradient_x2lax")
+width = 1920
+height = 1080
+fill_from = Vector2(1, 1)
+fill_to = Vector2(1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_dhpb8"]
+font = ExtResource("2_eix0e")
+font_size = 80
+font_color = Color(2.7915835e-06, 0.78468186, 0.50884277, 1)
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ahuso"]
+font = ExtResource("2_eix0e")
+font_size = 80
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_tn0f4"]
+font = ExtResource("2_eix0e")
+font_size = 80
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_3jatb"]
+font = ExtResource("2_eix0e")
+font_size = 80
+font_color = Color(2.7915835e-06, 0.78468186, 0.50884277, 1)
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ho3da"]
+font = ExtResource("2_eix0e")
+font_size = 60
+outline_size = 14
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Credits" type="Node2D"]
+script = ExtResource("1_eix0e")
+
+[node name="Background" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_fp7xi")
+centered = false
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("GradientTexture2D_eix0e")
+
+[node name="iwanPlays" type="Label" parent="."]
+offset_left = 1118.0
+offset_top = 438.0
+offset_right = 1523.0
+offset_bottom = 523.0
+text = "iwanPlays"
+label_settings = SubResource("LabelSettings_dhpb8")
+
+[node name="sebslom" type="Label" parent="."]
+offset_left = 1118.0
+offset_top = 530.0
+offset_right = 1523.0
+offset_bottom = 615.0
+text = "sebslom"
+label_settings = SubResource("LabelSettings_dhpb8")
+
+[node name="Randern212" type="Label" parent="."]
+offset_left = 1118.0
+offset_top = 609.0
+offset_right = 1543.0
+offset_bottom = 694.0
+text = "Randern212"
+label_settings = SubResource("LabelSettings_dhpb8")
+
+[node name="Everything else" type="Label" parent="."]
+offset_left = 350.0
+offset_top = 623.0
+offset_right = 902.0
+offset_bottom = 708.0
+text = "Everything Else"
+label_settings = SubResource("LabelSettings_ahuso")
+
+[node name="Lamp" type="Label" parent="."]
+offset_left = 350.0
+offset_top = 448.0
+offset_right = 783.0
+offset_bottom = 533.0
+text = "Lamp Model"
+label_settings = SubResource("LabelSettings_ahuso")
+
+[node name="Signal Tower" type="Label" parent="."]
+offset_left = 350.0
+offset_top = 541.0
+offset_right = 828.0
+offset_bottom = 626.0
+text = "Signal Tower"
+label_settings = SubResource("LabelSettings_ahuso")
+
+[node name="Camera Model" type="Label" parent="."]
+offset_left = 350.0
+offset_top = 263.0
+offset_right = 892.0
+offset_bottom = 348.0
+text = "Camera Model"
+label_settings = SubResource("LabelSettings_tn0f4")
+
+[node name="morff" type="Label" parent="."]
+offset_left = 1118.0
+offset_top = 262.0
+offset_right = 1523.0
+offset_bottom = 347.0
+text = "morff"
+label_settings = SubResource("LabelSettings_3jatb")
+
+[node name="DumokanArt" type="Label" parent="."]
+offset_left = 1118.0
+offset_top = 347.0
+offset_right = 1637.0
+offset_bottom = 432.0
+text = "Dumokan Art"
+label_settings = SubResource("LabelSettings_3jatb")
+
+[node name="Metal Pipes" type="Label" parent="."]
+offset_left = 350.0
+offset_top = 358.0
+offset_right = 755.0
+offset_bottom = 443.0
+text = "Metal Pipes"
+label_settings = SubResource("LabelSettings_tn0f4")
+
+[node name="Back" type="TextureButton" parent="."]
+offset_left = 59.0
+offset_top = 802.0
+offset_right = 464.0
+offset_bottom = 1072.0
+texture_normal = ExtResource("3_tn0f4")
+texture_pressed = ExtResource("4_3jatb")
+texture_hover = ExtResource("5_d7un4")
+
+[node name="BackLabel" type="Label" parent="Back"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 103.0
+offset_right = 318.0
+offset_bottom = 256.0
+text = "	Back"
+label_settings = SubResource("LabelSettings_ho3da")
+horizontal_alignment = 1

@@ -1,3 +1,4 @@
+class_name menuWithBackButton
 extends Node2D
 
 @onready var back: TextureButton = $Back

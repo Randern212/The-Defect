@@ -24,9 +24,9 @@ offset_bottom = 40.0
 [node name="Start" type="TextureButton" parent="Control"]
 layout_mode = 0
 offset_left = 59.0
-offset_top = 475.0
+offset_top = 310.0
 offset_right = 464.0
-offset_bottom = 745.0
+offset_bottom = 580.0
 texture_normal = ExtResource("2_2ssvc")
 texture_pressed = ExtResource("4_7toe1")
 texture_hover = ExtResource("3_ynrqf")
@@ -38,6 +38,27 @@ offset_top = 101.0
 offset_right = 318.0
 offset_bottom = 254.0
 text = "	Start
+"
+label_settings = ExtResource("6_7toe1")
+horizontal_alignment = 1
+
+[node name="Credits" type="TextureButton" parent="Control"]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 475.0
+offset_right = 464.0
+offset_bottom = 745.0
+texture_normal = ExtResource("2_2ssvc")
+texture_pressed = ExtResource("4_7toe1")
+texture_hover = ExtResource("3_ynrqf")
+
+[node name="Label" type="Label" parent="Control/Credits"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 101.0
+offset_right = 318.0
+offset_bottom = 254.0
+text = "	Credit
 "
 label_settings = ExtResource("6_7toe1")
 horizontal_alignment = 1
